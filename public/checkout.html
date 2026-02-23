@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/Navbar.css">
+    <link rel="stylesheet" href="./CSS/checkout.css">
+    <link rel="stylesheet" href="./CSS/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Foodzy - Checkout</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="red-line">
+        <p>Faq</p>
+        <p>Home - Checout</p>
+    </div>
+
+    <div class="checkout">
+        <div class="checkout-main">
+            <div class="checkout-left">
+                <div class="summary">
+                    <h2>Summary</h2>
+                    <div class="totals">
+                        <p class="totals-text">Sub-Total</p>
+                        <p class="totals-price">$80.00</p>
+                    </div>
+                    <div class="totals">
+                        <p class="totals-text">Delivery Charges</p>
+                        <p class="totals-price">$80.00</p>
+                    </div>
+                    <hr>
+                    <div class="g-totals">
+                        <p class="g-totals-text">Total Amount</p>
+                        <p class="g-totals-price">$80.00</p>
+                    </div>
+
+                    <div class="products">
+                    </div>
+                </div>
+                <div class="delivery">
+                    <h2>Delivery Method</h2>
+                    <p class="delivery-text">Please select the preffered shipping method to use on this order.</p>
+
+                    <div class="check-boxes">
+                        <div class="check-box">
+                            <p>Free Shipping</p>
+                            <input type="checkbox"> <span>Rate - $0.00 </span>
+                        </div>
+
+                        <div class="check-box">
+                            <p>Flat Rate</p>
+                            <input type="checkbox"> <span>Rate - $5.00 </span>
+                        </div>
+                    </div>
+
+                    <div class="comment-box">
+                        <p>Add Comments about your order</p>
+                        <textarea name="" id=""></textarea>
+                    </div>
+                </div>
+
+                <div class="payment">
+                    <h2>Payment Method</h2>
+                    <p>Please select a preffered payment method to use on this order.</p>
+                    <div class="payment-checkboxes">
+                        <div>
+                            <input type="checkbox"> <span>Cash On Delivery</span>
+                        </div>
+                        <div>
+                            <input type="checkbox"> <span>UPI</span>
+                        </div>
+                        <div>
+                            <input type="checkbox"> <span>Bank Transfer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-method">
+                    <h2>Payment Method</h2>
+                    <img src="./Assets/payment.png" alt="">
+                </div>
+            </div>
+
+            <div class="checkout-right">
+                <div class="checkout-right-first">
+                    <div class="new-customer">
+                        <h2>New <br> Customer </h2>
+                        <p class="new-customer-text">Checkout Options</p>
+                        <div class="inputs">
+                            <div class="single-input">
+                                <input type="radio">
+                                <span>Register Account</span>
+                            </div>
+
+                            <div class="single-input">
+                                <input type="radio">
+                                <span>Guest Account</span>
+                            </div>
+
+                        </div>
+                        <div class="right-text">
+                            <p>By creating an account you will be able to shop faster, be upto date with an orders's
+                                status,
+                                and keep track the orders you have previousely made.</p>
+                        </div>
+                        <button>Continue</button>
+                    </div>
+
+                    <div class="returning-customer">
+                        <h2>Returning Customer</h2>
+                    </div>
+
+                    <div class="return-inputs">
+                        <div class="return-input">
+                            <p>Email Address</p>
+                            <input type="email" placeholder="Enter your email address">
+                        </div>
+
+                        <div class="return-input">
+                            <p>Password</p>
+                            <input type="password" placeholder="Enter your password">
+                        </div>
+                    </div>
+
+                    <div class="return-buttons">
+                        <button>Login</button>
+                        <a href="">Forgot Password??</a>
+                    </div>
+                </div>
+
+                <div class="checkout-right-second">
+                    <div class="billing">
+                        <h2>Billing Details</h2>
+                        <div class="inputs">
+                            <div class="single-input">
+                                <input type="radio">
+                                <span>I want to use an existing address</span>
+                            </div>
+
+                            <div class="single-input">
+                                <input type="radio">
+                                <span>I want to use new address</span>
+                            </div>
+
+                        </div>
+
+                        <form action="" id="orderForm">
+                            <div class="form-input">
+                                <p>First Name*</p>
+                                <input type="text" placeholder="Enter your first name" name="firstname">
+                            </div>
+
+                            <div class="form-input">
+                                <p>Last Name*</p>
+                                <input type="text" placeholder="Enter your last name" name="lastname">
+                            </div>
+
+                            <div class="form-input full-input">
+                                <p>Address</p>
+                                <input type="text" placeholder="Address Line 1" name="address">
+                            </div>
+
+                            <div class="form-input">
+                                <p>City</p>
+                                <input type="text" placeholder="City" name="city">
+                            </div>
+
+                            <div class="form-input">
+                                <p>Post Code</p>
+                                <input type="text" id="post-code" placeholder="Post Code" name="postcode">
+                            </div>
+
+                            <div class="form-input">
+                                <p>Country</p>
+                                <input type="text" placeholder="Country" name="country">
+                            </div>
+
+                            <div class="form-input">
+                                <p>Region State</p>
+                                <input type="text" placeholder="Region/State" name="state">
+                            </div>
+                        </form>
+                    </div>
+                    <button id="placeOrderBtn">Place Order</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+    <footer></footer>
+
+    <script src="./JS/Navbar.js"></script>
+    <script src="./JS/animations.js"></script>
+    <script>
+        let products = document.getElementsByClassName('products');
+        let form = document.getElementById('orderForm');
+        let checkoutItems = []
+        
+        const nameRegex = /^[a-zA-Z\s]+$/;
+        const postcodeRegex = /^[a-zA-Z0-9\s-]+$/;
+
+        fetch('/checkoutItems')
+        .then(res=> res.json())
+        .then(data => {
+            checkoutItems = data.cart;
+            renderCheckout();
+        });
+
+        function renderCheckout() {
+            checkoutItems.forEach(item => {
+                let product = document.createElement('div');
+                product.classList.add('product');
+
+                product.innerHTML = `
+                <img src="${item.product.image}" alt="">
+                            <div class="product-detail">
+                                <p class="product-name">${item.product.product_name}</p>
+                                <div class="product-stars">
+                                    <img src="./Assets/star_fill.png" alt="">
+                                    <img src="./Assets/star_fill.png" alt="">
+                                    <img src="./Assets/star_fill.png" alt="">
+                                    <img src="./Assets/star_fill.png" alt="">
+                                    <img src="./Assets/star_empty.png" alt="">
+                                </div>
+                                <div class="product-price">
+                                    <p class="new-price">${item.product.discount_price}</p>
+                                    <p class="old-price">${item.product.old_price}</p>
+                                </div>
+                            </div>                
+                `
+                products[0].appendChild(product);
+            })
+        }
+
+        function validateCheckoutForm() {
+            const firstname = form.firstname.value.trim();
+            const lastname = form.lastname.value.trim();
+            const address = form.address.value.trim();
+            const city = form.city.value.trim();
+            const postcode = form.postcode.value.trim();
+            const country = form.country.value.trim();
+            const state = form.state.value.trim();
+
+            if (!firstname || firstname.length < 2) {
+                alert('First name must be at least 2 characters');
+                form.firstname.focus();
+                return false;
+            }
+            if (!nameRegex.test(firstname)) {
+                alert('First name can only contain letters');
+                form.firstname.focus();
+                return false;
+            }
+
+            if (!lastname || lastname.length < 2) {
+                alert('Last name must be at least 2 characters');
+                form.lastname.focus();
+                return false;
+            }
+            if (!nameRegex.test(lastname)) {
+                alert('Last name can only contain letters');
+                form.lastname.focus();
+                return false;
+            }
+
+            if (!address || address.length < 5) {
+                alert('Address must be at least 5 characters');
+                form.address.focus();
+                return false;
+            }
+
+            if (!city || city.length < 2) {
+                alert('City must be at least 2 characters');
+                form.city.focus();
+                return false;
+            }
+            if (!nameRegex.test(city)) {
+                alert('City can only contain letters');
+                form.city.focus();
+                return false;
+            }
+
+            if (!state || state.length < 2) {
+                alert('State must be at least 2 characters');
+                form.state.focus();
+                return false;
+            }
+            if (!nameRegex.test(state)) {
+                alert('State can only contain letters');
+                form.state.focus();
+                return false;
+            }
+
+            if (!postcode || postcode.length < 3) {
+                alert('Postcode must be at least 3 characters');
+                form.postcode.focus();
+                return false;
+            }
+            if (!postcodeRegex.test(postcode)) {
+                alert('Invalid postcode format');
+                form.postcode.focus();
+                return false;
+            }
+
+            if (!country || country.length < 2) {
+                alert('Country must be at least 2 characters');
+                form.country.focus();
+                return false;
+            }
+            if (!nameRegex.test(country)) {
+                alert('Country can only contain letters');
+                form.country.focus();
+                return false;
+            }
+
+            if (!checkoutItems || checkoutItems.length === 0) {
+                alert('Your cart is empty');
+                return false;
+            }
+
+            return true;
+        }
+
+        let orderData= {};
+
+
+        placeOrderBtn.addEventListener('click',async ()=>{
+            if (!validateCheckoutForm()) {
+                return;
+            }
+
+            const formData = new FormData(form);
+
+            orderData = {
+                firstname: formData.get('firstname'),
+                lastname: formData.get('lastname'),
+                address: formData.get('address'),
+                city: formData.get('city'),
+                postcode: formData.get('postcode'),
+                country: formData.get('country'),
+                state: formData.get('state'),
+                items: checkoutItems
+            }
+
+            
+
+            const res = await fetch('/place-order', {
+                method: "POST",
+                headers: {
+                    "Content-Type" : "application/json"
+                },
+                body: JSON.stringify(orderData)
+            });
+            const data = await res.json();
+            
+            if (data.success) {
+                sessionStorage.setItem('lastOrder', JSON.stringify({
+                    orderId: data.order ? data.order._id : Date.now(),
+                    firstname: orderData.firstname,
+                    lastname: orderData.lastname,
+                    address: orderData.address,
+                    city: orderData.city,
+                    state: orderData.state,
+                    postcode: orderData.postcode,
+                    itemCount: checkoutItems.length
+                }));
+                window.location.href = '/order-success';
+            } else {
+                alert(data.message);
+            }
+        })
+        </script>
+</body>
+
+</html>

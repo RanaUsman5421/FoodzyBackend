@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Playwrite+GB+S+Guides:ital@0;1&family=Playwrite+IN+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+.red-line {
+    background: #f53e32;
+    padding: 15px 12%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+}
+
+form{
+    width: 25%;
+    margin: 25px auto;
+    padding: 20px;
+    border: 1px solid #DEDEDE;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-logo{
+    text-align: center;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-size: 0.8rem;
+}
+
+.login-form-div p{
+    color: #909090;
+}
+.login-form-div input{
+    padding: 7px 10px;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #DEDEDE;
+}
+
+.forget-text{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.forget-text input{
+    width: 13px;
+    height: 13px;
+}
+
+.remember-me{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: auto;
+}
+.forget-text span{
+    font-size: 0.8rem;
+    color: #909090;
+}
+
+.forget-text a{
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: #909090;
+    text-decoration: none;
+}
+
+.forget-text button{
+    padding: 5px 15px;
+    background-color: #F53e32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.submit-btn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submit-btn button{
+    background: #f53e32;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn button:hover{
+    background: #e03b34;
+}
+
+.submit-btn a{
+    color: #909090;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+    .red-line{
+        padding: 10px 4%;
+    }
+    form{
+        width: 80%;
+        margin: 10% auto;
+    }
+    .submit-btn{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .submit-btn button{
+        width: 100%;
+        padding: 10px 0px;
+        font-size: 0.9rem;
+    }
+    .submit-btn a{
+        font-size: 0.9rem;
+        text-align: center;
+        width: 100%;
+        margin-top: 5px;
+        padding: 10px 0px;
+        border: 1px solid #DEDEDE;
+        border-radius: 5px;
+        background: #f9f9f9;
+    }
+}

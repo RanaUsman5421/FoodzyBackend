@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Playwrite+GB+S+Guides:ital@0;1&family=Playwrite+IN+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+}
+.red-line {
+    background: #f53e32;
+    padding: 15px 12%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+}
+
+.shop{
+    padding: 30px 12%;
+}
+
+.shop .filter-bar{
+    font-family: "Poppins", sans-serif;
+    padding: 6px 10px;
+    background: #f7f7f8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-icons i{
+    font-size: 1rem;
+    background: white;
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 3px;
+}
+
+.filter-icons i:first-child{
+    background: #f53e32;
+    color: white;
+}
+
+
+.filter-icons span{
+    font-size: 0.8rem;
+    margin-left: 10px;
+    color: #909090;
+}
+
+.filter-text{
+    justify-content: space-between;
+    background: white;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #909090;
+}
+
+.filter-text select{
+    border: none;
+    outline: none;
+    color: #909090;
+    justify-content: space-between;
+}
+
+
+.shop .products-container{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.products-container .product-container{
+    height: fit-content;
+    border: 1px solid #e7d5d5;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-container{
+    padding: 10px;
+}
+
+.product-container .product-image{
+    height: 50%;
+}
+
+.product-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.product-image i{
+    font-size: 1.2rem;
+    color: #64b496;
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding-top: 8px;
+    margin: auto;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+    background: #f7f7f8;
+    border-radius: 50%;
+}
+
+.product-container .category{
+    text-align: center;
+    margin-top: 10px;
+    color: #909090;
+    font-size: 0.9rem;
+}
+
+.product-rating{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.product-rating span{
+    color: #909090;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+.product-name{
+    text-align: center;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.product-price{
+    margin-top: 7px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+}
+
+.product-price .discount-price{
+    color: #f53e32;
+    font-weight: 600;
+}
+
+.product-price .old-price{
+    color: #909090;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+.pages{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.pages button{
+    border: 1px solid #e7d5d5;
+    outline: none;
+    padding: 7px 10px;
+    background: white;
+    color: #909090;
+}
+
+.pages div{
+    display: flex;
+}
+
+.previous{
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background: #909090;
+}
+
+.nmbr-btn button{
+    padding: 5px 15px;
+}
+
+.nmbr-btn button:first-child{
+    background: #f53e32;
+    color: white;
+}
+
+.next{
+    
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.add-to-cart{
+    background: #f53e32;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 7px 29%;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    margin-top: 7%;
+    cursor: pointer;
+}
+
+
+/* Products Container Responsive Design */
+@media screen and (max-width: 500px)  {
+    .red-line{
+        padding: 10px;
+    }
+    .shop{
+        padding: 10px 5px;
+    }
+    
+    .filter-icons span{
+        display: none;
+    }
+    .filter-text select{
+        background-color: white;
+    }
+    .shop .products-container{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}

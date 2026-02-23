@@ -1,0 +1,893 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Playwrite+GB+S+Guides:ital@0;1&family=Playwrite+IN+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+section{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+body{
+    overflow-x: hidden;
+}
+.bg-image{
+    background: url('../../Assets/cover.png');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.bg-image .glow-img{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.chick-img{
+    position: absolute;
+    top: 18%;
+    right: 12%;
+}
+
+.chick-img img{
+    width: 350px;
+    height: 350px;
+}
+
+.hero-button-container{
+    position: absolute;
+    bottom: 70px;
+    left: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hero-button-container button{
+    background: #cbb678;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    color: #7c5334;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.hero-button-container i{
+    color: #cbb678;
+    background: #7c5334;
+    font-size: 1.1rem;
+    padding: 14px 0px;
+    width: 50px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    z-index: 3;
+}
+
+.hero-social-container{
+    position: absolute;
+    bottom: 10px;
+    right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.hero-social-container p{
+    color: #cbb678;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-social-container p {
+    color: #cbb678;
+    font-weight: 500;
+    font-size: 1.1rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-social-container p:last-child{
+    font-size: 0.9rem;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-icons-container i{
+    background: #fff6dc;
+    width: 20px;
+    padding: 10px 0px;
+    width: 35px;
+    border-radius: 20px;
+    margin: 0px 5px;
+}
+
+
+.categories{
+    margin-top: 5%;
+    padding: 20px 12%;
+}
+
+.categories .favorite{
+    color: red;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 2%;
+}
+
+.categories .category{
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+}
+
+.categories-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.categories-container .single-category-container{
+    box-shadow: 0px 0px 5px #DEDEDE;
+    width: 15%;
+    padding: 1% 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+}
+
+.single-category-container .category-image{
+    background: #f1efef;
+    width: 90px;
+    height: 90px;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.single-category-container p{
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+
+.single-category-container p:last-child{
+    font-weight: 400;
+    color: #909090;
+    font-size: 0.9rem;
+}
+
+.bestSales{
+    padding: 10px 8%;
+    margin-top: 5%;
+}
+
+.bestSales-heading{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.bestSales-heading h2{
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
+
+.bestSales-heading div{
+    display: flex;
+    gap: 10px;
+    font-size: 0.8rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.bestSales-heading div span:first-child{
+    color: #3bb77e;
+}
+
+.bestSales-main{
+    padding: 30px 0px;
+    display: flex;
+    gap: 10px;
+}
+
+.bestSales-main-img{
+    width: 25%;
+    height: inherit;
+    background: url(../../Assets/div_banner_img.png);
+    background-position: center;
+    border-radius: 6px;
+    padding: 25px;
+    position: relative;
+}
+
+.bestSales-main-img p{
+    color: white;
+    font-size: 2rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.bestSales-main-img button{
+    background: #f53e32;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 7px 14px;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: 24%;
+}
+
+
+.products-container{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-container{
+    width: 24%;
+    border: #DEDEDE 1px solid;
+    height: 100%;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.product-container .product-image{
+    width: 100%;
+    height: 45%;
+}
+
+.product-container span{
+    color: #909090;
+    font-size: 0.6rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.product-container p{
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.product-container .star{
+    margin-top: 4px;
+}
+
+.price-div{
+    margin-top: 4%;
+    display: flex;
+    gap: 5px;
+}
+.price-div .price{
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #3bb77e;
+}
+
+.price-div .old-price{
+    text-decoration: line-through;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.bar{
+    margin-top: 5%;
+    width: 95%;
+    height: 6px;
+    background: #DEDEDE;
+    border-radius: 5px;
+}
+
+.bar-inside{
+    background: #f53e32;
+    width: 75%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.cart-button button{
+    background: #f53e32;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 7px 29%;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    margin-top: 7%;
+}
+
+
+.special-dishes{
+    padding: 10px 8%;
+}
+
+.special-dishes .dishes-text{
+    color: #f53e32;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+
+.special-dishes .dishes-heading{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.dishes-container{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dish-container{
+    padding: 15px 2%;
+    width: 30%;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 8px;
+    position: relative;
+}
+.dish-container img{
+    width: 100%;
+}
+
+.dish-detail{
+    margin-top: 2%;
+}
+
+.dish-detail .dish-name{
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+}
+
+.dish-detail .dish-desc{
+    font-size: 0.8rem;
+    color: #909090;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.icon-div{
+    background: #f53e32;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 50%;
+}
+
+.icon-div .heart-icon{
+    font-size: 1.4rem;
+    color: white;
+}
+
+.deals{
+    margin-top: 2%;
+    padding: 0px 8%;
+}
+
+.deals-heading{
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+
+.deals-container{
+    display: flex;
+    gap: 10px;
+}
+
+.deal-container{
+    width: 25%;
+    margin-top: 2%;
+    padding: 10px 0px;
+}
+
+.deal-container .img-container .back-img{
+    width: 100%;
+}
+
+.deal-detail{
+    width: 90%;
+    background: white;
+    box-shadow: 0px 2px 10px gray;
+    margin: auto;
+    margin-top: -60px;
+    position: relative;
+    z-index: 2;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+.deal-detail .deal-name{
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.rating{
+    margin-top: 2%;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating span{
+    font-size: 0.8rem;
+    color: #909090;
+}
+
+.by-food{
+    margin-top: 4%;
+    color: #909090;
+    font-size: 0.8rem;
+}
+
+.by-food span{
+    color: #3bb77e;
+}
+.deals-price-div{
+    margin-top: 3%;
+}
+.deals-price-div .price{
+    color: #3bb77e;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.deals-price-div .old-price{
+    color: #909090;
+    font-size: 0.7rem;
+    text-decoration: line-through;
+    margin-left: 5px;
+}
+.price-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.deals-cart-button{
+    padding: 5px 15px;
+    background: #f53e32;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.choose-us{
+    padding: 10px 8%;
+}
+
+.choose{
+    margin-top: 5%;
+    display: flex;
+    gap: 20px;
+}
+
+.choose-img{
+    width: 35%;
+}
+
+.choose-img img{
+    width: 100%;
+    border-radius: 7px;
+}
+
+.choose-detail{
+    width: 50%;
+    padding: 0px 2%;
+}
+
+.choose-detail h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.choose-div{
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+    padding: 15px 10px ;
+    box-shadow: 0px 0px 5px #DEDEDE;
+    margin-top: 4%;
+}
+
+.choose-div-icon img{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    box-shadow: 0px 0px 4px #DEDEDE;
+    border-radius: 50%;
+}
+
+.choose-div-detail h2{
+    font-size: 1rem;
+}
+
+.choose-div-detail p{
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+    margin-top: 2px;
+    font-weight: 400;
+}
+
+.news-letter{
+    margin-top: 3%;
+    width: 100%;
+    padding: 10px 8%;
+}
+
+.news-letter-bg{
+    background: url(../../Assets/footer_image.png);
+    height: 40vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.news-letter-detail h2{
+    color: white;
+    font-weight: 500;
+    font-size: 1.3rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.news-letter-detail p{
+    margin-top: 2%;
+    color: #909090;
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.news-letter-detail p span{
+    color: #3bb77e;
+}
+
+.news-letter-input{
+    margin-top: 3%;
+    background: white;
+    width: fit-content;
+    padding: 0px 2%;
+    border-radius: 20px;
+}
+.menu-active{
+    display: block;
+}
+.news-letter-input i{
+    color: #b1aaaa;
+}
+
+.news-letter-input input{
+    font-family: "Poppins", sans-serif;
+    padding: 10px 5px;
+    border: none;
+    outline: none;
+}
+
+.news-letter-input button{
+    font-family: "Poppins", sans-serif;
+    background: #f53e32;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+
+.labels{
+    padding: 10px 8%;
+    font-family: "Poppins", sans-serif;
+}
+
+.labels-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+
+.label{
+    display: flex;
+    background: #f4f6fa;
+    width: 20%;
+    padding: 10px 15px;
+    gap: 5px;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.label img{
+    width: 40px;
+    height: 40px;
+}
+
+.label h4{
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.label p{
+    font-size: 0.6rem;
+    color: #909090;
+}
+
+/* =============================================
+   ANIMATIONS - Scale, Fade, and Counter Effects
+   ============================================= */
+
+/* Fade Section Animation */
+.fade-section {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-section.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Scale and Fade Animation */
+.scale-fade-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scale-fade-in.animate-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Staggered Animation Delays */
+.single-category-container:nth-child(1),
+.product-container:nth-child(1),
+.dish-container:nth-child(1),
+.deal-container:nth-child(1),
+.label:nth-child(1) { transition-delay: 0s; }
+
+.single-category-container:nth-child(2),
+.product-container:nth-child(2),
+.dish-container:nth-child(2),
+.deal-container:nth-child(2),
+.label:nth-child(2) { transition-delay: 0.1s; }
+
+.single-category-container:nth-child(3),
+.product-container:nth-child(3),
+.dish-container:nth-child(3),
+.deal-container:nth-child(3),
+.label:nth-child(3) { transition-delay: 0.2s; }
+
+.single-category-container:nth-child(4),
+.product-container:nth-child(4),
+.dish-container:nth-child(4),
+.deal-container:nth-child(4),
+.label:nth-child(4) { transition-delay: 0.3s; }
+
+.single-category-container:nth-child(5),
+.product-container:nth-child(5),
+.dish-container:nth-child(5),
+.deal-container:nth-child(5),
+.label:nth-child(5) { transition-delay: 0.4s; }
+
+.single-category-container:nth-child(6),
+.product-container:nth-child(6),
+.deal-container:nth-child(6),
+.label:nth-child(6) { transition-delay: 0.5s; }
+
+/* Number Counter Animation */
+.counter {
+    display: inline-block;
+    font-weight: bold;
+    color: #3bb77e;
+}
+
+.counter-animate {
+    animation: countUp 2s ease-out forwards;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulse Animation for Numbers */
+.pulse-animation {
+    animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Floating Animation Enhancement */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-15px) rotate(2deg); }
+    50% { transform: translateY(-20px) rotate(0deg); }
+    75% { transform: translateY(-15px) rotate(-2deg); }
+}
+
+.chick-img img {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Glow Pulse Enhancement */
+@keyframes glowPulse {
+    0%, 100% { 
+        opacity: 0.6; 
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.05);
+    }
+}
+
+.glow-img {
+    animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* Card Initial State (for JS animation) */
+.product-container, .dish-container, .deal-container, .single-category-container {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.product-container.animate-in, 
+.dish-container.animate-in, 
+.deal-container.animate-in, 
+.single-category-container.animate-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Hover Scale Animations */
+.product-container:hover, 
+.dish-container:hover, 
+.deal-container:hover, 
+.single-category-container:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Hover Scale Animation */
+.hero-button-container button {
+    transition: all 0.3s ease;
+}
+
+.hero-button-container button:hover {
+    background: #b8a568;
+    transform: translateX(5px) scale(1.05);
+}
+
+/* Icon Div Animation */
+.icon-div {
+    transition: transform 0.3s ease;
+}
+
+.icon-div:hover {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* Newsletter Button Animation */
+.news-letter-input button {
+    transition: all 0.3s ease;
+}
+
+.news-letter-input button:hover {
+    background: #d63031;
+    transform: scale(1.08);
+}
+
+/* Best Sales Main Image Animation */
+.bestSales-main-img {
+    transition: transform 0.5s ease;
+}
+
+.bestSales-main-img:hover {
+    transform: scale(1.03);
+}
+
+/* Choose Image Animation */
+.choose-img img {
+    transition: transform 0.5s ease;
+}
+
+.choose-img img:hover {
+    transform: scale(1.08);
+}
+
+/* Category Image Animation */
+.single-category-container .category-image {
+    transition: transform 0.3s ease;
+}
+
+.single-category-container:hover .category-image {
+    transform: scale(1.15);
+}
+
+/* Footer Icons Animation */
+.footer-4-icons i {
+    transition: all 0.3s ease;
+}
+
+.footer-4-icons i:hover {
+    background: #f53e32;
+    color: white;
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Social Icons Animation */
+.hero-icons-container i {
+    transition: all 0.3s ease;
+}
+
+.hero-icons-container i:hover {
+    background: #f53e32;
+    color: white;
+    transform: scale(1.15) translateY(-3px);
+}
+
+/* Cart Button Animation */
+.cart-button button, .deals-cart-button {
+    transition: all 0.3s ease;
+}
+
+.cart-button button:hover, .deals-cart-button:hover {
+    background: #d63031;
+    transform: scale(1.05);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .fade-section, .scale-fade-in,
+    .product-container, .dish-container, 
+    .deal-container, .single-category-container { 
+        opacity: 1; 
+        transform: none; 
+        transition: none; 
+    }
+    .chick-img img, .glow-img { 
+        animation: none; 
+    }
+    .product-container:hover, .dish-container:hover, 
+    .deal-container:hover { 
+        transform: none; 
+    }
+}

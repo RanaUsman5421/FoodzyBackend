@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Playwrite+GB+S+Guides:ital@0;1&family=Playwrite+IN+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+
+    font-family: "Poppins", sans-serif;
+}
+.red-line {
+    background: #f53e32;
+    padding: 15px 12%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+}
+
+.blog-main{
+    padding: 10px 12%;
+    margin-top: 50px;
+}
+
+
+.blog-1 img{
+    width: 100%;
+}
+
+.blog-breadcrum {
+    color: #909090;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.blog-breadcrum span{
+    color: #f53e32;
+    font-weight: 600;
+}
+
+.blog-heading{
+    margin-top: 20px;
+}
+
+.blog-heading h2{
+    font-weight: 500;
+}
+
+.blog-heading p{
+    color: #909090;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.blog-2{
+    margin-top: 30px;
+}
+
+
+.blog-images{
+    display: flex;
+    gap: 30px;
+}
+
+.blog-image img{
+    width: 100%;
+}
+
+.blog-image-text{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.blog-image-text p{
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.blog-image-text i{
+    background: #f53e32;
+    color: white;
+    width: 20px;
+    font-size: 0.8rem;
+    padding: 3px 0px;
+    border-radius: 50%;
+}
+
+.blog-2-text{
+    border: 1px solid #e7d5d5;
+    border-radius: 5px;
+    margin-top: 50px;   
+    padding: 30px;
+}
+
+.blog-2-text p{
+    font-size: 0.9rem;
+    color: #909090;
+}
+
+.blog-2-text .john-martin{
+    color: #f53e32;
+    margin-top: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.blog-2-opentext{
+    padding: 35px 0px;
+    font-size: 0.9rem;
+    color: #909090;
+}
+
+.blog-2-badge{
+    border: 1px solid #e7d5d5;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-2-badge .labels{
+    display: flex;
+    gap: 10px;
+}
+
+.labels p{
+    border-radius: 5px;
+    border: 1px solid #e7d5d5;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    color: #909090;
+}
+
+.blog-2-badge .icons i{
+    border: 1px solid #e7d5d5;
+    height: 30px;
+    width: 30px;
+    padding-top: 5px;    
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.pages{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.pages button{
+    border: 1px solid #e7d5d5;
+    outline: none;
+    padding: 7px 10px;
+    background: white;
+    color: #909090;
+}
+
+.pages div{
+    display: flex;
+}
+
+.previous{
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background: #909090;
+}
+
+.nmbr-btn button{
+    padding: 5px 15px;
+}
+
+.nmbr-btn button:first-child{
+    background: #f53e32;
+    color: white;
+}
+
+.next{
+    
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+@media screen and (max-width: 500px)  {
+    .red-line{
+        padding: 10px;
+    }
+
+    .blog-main{
+        padding: 20px;
+    }
+
+    .blog-image-text i{
+        display: none;
+    }
+
+    .blog-2-text {
+        padding: 10px;
+    }
+
+    .blog-2-badge{
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+}

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Playwrite+GB+S+Guides:ital@0;1&family=Playwrite+IN+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.red-line {
+    background: #f53e32;
+    padding: 15px 12%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+}
+
+.faq{
+    padding: 20px 12%;
+}
+
+.faq .faq-main{
+    display: flex;
+}
+
+.faq-main .faq-img{
+    width: 50%;
+}
+
+.faq-img img{
+    width: 100%;
+}
+
+.faq-questions{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-questions h2{
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    text-align: left;
+    padding: 0px 30px;
+}
+
+.faq-questions {
+    display: flex;
+}
+
+.faq-div{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px 5%;
+    gap: 20px;
+}
+
+.question-main{
+    display: flex;
+    flex-direction: column;
+}
+
+.question{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    height: fit-content;
+    border: 1px solid #DEDEDE;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.answer{
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+    border: 1px solid #DEDEDE;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #909090;
+    transform: translateY(-250px);
+    transition: all 0.8s ease-in-out;
+    display: none;
+}
+
+.active{
+    transform: translateY(0px);
+    transition: all 0.8s ease-in-out;
+    display: block;
+}

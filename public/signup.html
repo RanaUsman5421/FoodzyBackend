@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/signup.css">
+    <link rel="stylesheet" href="./CSS/Navbar.css">
+    <link rel="stylesheet" href="./CSS/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css"
+        integrity="sha512-WxpJXPm/Is1a/dzEdhdaoajpgizHQimaLGL/QqUIAjIihlQqlPQb1V9vkGs9+VzXD7rgI6O+UsSKl4u5K36Ydw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Foodzy - Signup</title>
+</head>
+<body>
+
+
+    <div id="navbar"></div>
+    <div class="red-line">
+        <p>SignUp</p>
+        <p>Home - SignUp</p>
+    </div>
+
+
+    <div class="signup-module">
+        <i class="fa-regular fa-circle-check fa-bounce" style="color: #e52424;"></i>
+        <p>Signup Successfully!</p>
+        <a href="login.html">Login</a>
+    </div>
+    <form id="signupForm">
+        <div class="login-logo">
+            <img src="./Assets/login_logo.png" alt="">
+        </div>
+
+        <div class="grid-inputs">
+            <div>
+                <p>First Name*</p>
+                <input type="text" placeholder="Enter Your First Name" id="firstname" required name="firstname">
+            </div>
+            <div>
+                <p>Last Name*</p>
+                <input type="text" placeholder="Enter Your Last Name" id="lastname" required name="lastname">
+            </div>
+            <div>
+                <p>Password*</p>
+                <input type="password" placeholder="Password" id="password" required name="password">
+            </div>
+            <div>
+                <p>Confirm Password*</p>
+                <input type="password" placeholder="Confirm Password" id="c-password" required name="c-password">
+                <small id="errorMsg"></small>
+            </div>
+
+            <div class="full-input">
+                <p>Email*</p>
+                <input type="email" placeholder="Enter Your Email" id="email" required name="email">
+            </div>
+
+            <div class="submit-btn">
+                <button type="button" id="sendCodeBtn">Get Verification Code</button>
+            </div>
+            <div class="full-input">
+                <input type="number" name="code" id="code" placeholder="Eneter Verification Code">
+                <div class="submit-btn">
+                    <button type="button" id="verifyBtn" class="submit-button">Submit</button>
+                    <a href="/login">Login?</a>
+                </div>
+            </div>
+        </div>
+        
+    </form>
+
+
+
+    <footer></footer>
+    
+    <script src="./JS/Faq.js"></script>
+    <script src="./JS/Navbar.js"></script>
+    <script>
+        let password = document.getElementById('password');
+        let c_password = document.getElementById('c-password');
+        let sendCodeBtn = document.getElementById('sendCodeBtn');
+        let errorMsg = document.getElementById('errorMsg');
+        let verifyBtn = document.getElementById('verifyBtn');
+        let module = document.querySelector('.signup-module');
+        console.log(module);
+        let userData = {};
+        
+        // Password validation regex
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
+        
+        // Name validation regex (letters only)
+        const nameRegex = /^[a-zA-Z\s]+$/;
+
+        // Validate form fields
+        function validateForm() {
+            const firstname = document.getElementById('firstname').value.trim();
+            const lastname = document.getElementById('lastname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const passwordVal = password.value;
+            const cPasswordVal = c_password.value;
+
+            // Reset error message
+            errorMsg.textContent = '';
+            errorMsg.style.color = '';
+
+            // Validate firstname
+            if (firstname.length < 2) {
+                errorMsg.textContent = 'First name must be at least 2 characters';
+                errorMsg.style.color = 'red';
+                return false;
+            }
+            if (!nameRegex.test(firstname)) {
+                errorMsg.textContent = 'First name can only contain letters';
+                errorMsg.style.color = 'red';
+                return false;
+            }
+
+            // Validate lastname
+            if (lastname.length < 2) {
+                errorMsg.textContent = 'Last name must be at least 2 characters';
+                errorMsg.style.color = 'red';
+                return false;
+            }
+            if (!nameRegex.test(lastname)) {
+                errorMsg.textContent = 'Last name can only contain letters';
+                errorMsg.style.color = 'red';
+                return false;
+            }
+
+            // Validate email
+            const emailRegex = /^\S+@\S+\.\S+$/;
+            if (!emailRegex.test(email)) {
+                errorMsg.textContent = 'Please enter a valid email address';
+                errorMsg.style.color = 'red';
+                return false;
+            }
+
+            // Validate password
+            if (passwordVal.length < 8) {
+                errorMsg.textContent = 'Password must be at least 8 characters';
+                errorMsg.style.color = 'red';
+                return false;
+            }
+            if (!passwordRegex.test(passwordVal)) {
+                errorMsg.textContent = 'Password must contain uppercase, lowercase, number and special character';
+                errorMsg.style.color = 'red';
+                return false;
+            }
+
+            // Validate password match
+            if (passwordVal !== cPasswordVal) {
+                errorMsg.textContent = 'Passwords do not match';
+                errorMsg.style.color = 'red';
+                return false;
+            }
+
+            return true;
+        }
+
+        // Real-time password strength check
+        password.addEventListener('input', function() {
+            const passwordVal = password.value;
+            if (passwordVal.length > 0 && !passwordRegex.test(passwordVal)) {
+                password.style.borderColor = 'orange';
+            } else if (passwordVal.length >= 8 && passwordRegex.test(passwordVal)) {
+                password.style.borderColor = 'green';
+            } else {
+                password.style.borderColor = '';
+            }
+        });
+
+        // Real-time password match check
+        c_password.addEventListener('input', function() {
+            if (c_password.value !== password.value && c_password.value.length > 0) {
+                c_password.style.borderColor = 'red';
+                errorMsg.textContent = 'Passwords do not match';
+                errorMsg.style.color = 'red';
+            } else if (c_password.value === password.value) {
+                c_password.style.borderColor = 'green';
+                errorMsg.textContent = '';
+            }
+        });
+
+        sendCodeBtn.addEventListener('click', async ()=>{
+            // Validate form before sending
+            if (!validateForm()) {
+                return;
+            }
+            
+            let form = document.getElementById('signupForm');
+            const formData = new FormData(form);
+            
+            userData = {
+                firstname: formData.get('firstname'),
+                lastname: formData.get('lastname'),
+                email: formData.get('email'),
+                password: formData.get('password')
+            }
+
+            const res = await fetch('/send-code', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(userData)
+            })
+
+            const data = await res.json();
+            alert(data.message);
+
+        })
+
+
+        verifyBtn.addEventListener('click', async ()=>{
+            const otp = document.getElementById('code').value;
+            
+            // Validate OTP
+            if (!otp || otp.length !== 6) {
+                alert('Please enter a valid 6-digit verification code');
+                return;
+            }
+
+            const res2 = await fetch('/verify-code', {
+                method: "POST",
+                headers: {
+                    "Content-Type" : "application/json"
+                },
+                body: JSON.stringify({otp})
+            })
+            const data2 = await res2.json();
+            console.log(data2);
+            if(data2.success){
+                module.classList.toggle('module-active');
+            }else{
+                alert(data2.message);
+            }
+        })
+        window.onclick = () =>{
+            if(module.classList.contains('module-active')){
+                module.classList.remove('module-active');
+            }
+        }
+    
+    </script>
+    
+</body>
+</html>

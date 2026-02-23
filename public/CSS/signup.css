@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Playwrite+GB+S+Guides:ital@0;1&family=Playwrite+IN+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+.red-line {
+    background: #f53e32;
+    padding: 15px 12%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+}
+
+form {
+    width: 40%;
+    margin: 25px auto;
+    padding: 20px;
+    border: 1px solid #DEDEDE;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-logo {
+    text-align: center;
+}
+
+.grid-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grid-inputs p {
+    font-size: 0.9rem;
+    color: #909090;
+}
+
+.grid-inputs input {
+    padding: 7px 10px;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #DEDEDE;
+}
+
+.full-input {
+    grid-column: span 2;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submit-btn button,
+.submit-button {
+    background: #f53e32;
+    margin-top: 10px;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn button:hover {
+    background: #e03b34;
+}
+
+.full-input a {
+    color: #909090;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.signup-module {
+    height: 50%;
+    width: 50%;
+    background: white;
+    position: fixed;
+    box-shadow: 0px 0px 5px #909090;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    display: none;
+}
+.module-active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.signup-module i {
+    font-size: 5rem;
+}
+
+.signup-module a {
+    background: #f53e32;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 500px) {
+    .red-line {
+        padding: 10px 4%;
+    }
+
+    form {
+        width: 90%;
+        margin: 25px auto;
+        padding: 15px;
+        border: 1px solid #DEDEDE;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid-inputs {
+        grid-template-columns: auto;
+    }
+
+    .grid-inputs input {
+        font-size: 0.7rem;
+    }
+
+    .submit-btn {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .submit-btn button {
+        width: 100%;
+        padding: 10px 0px;
+        font-size: 0.9rem;
+    }
+
+    .submit-btn a {
+        font-size: 0.9rem;
+        text-align: center;
+        width: 100%;
+        margin-top: 5px;
+        padding: 10px 0px;
+        border: 1px solid #DEDEDE;
+        border-radius: 5px;
+        background: #f9f9f9;
+    }
+
+
+}

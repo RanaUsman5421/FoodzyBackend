@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "fresh-organic-villa-farm-lomon-500gm-pack",
+    "image": "https://res.cloudinary.com/dxwlupbbq/image/upload/v1769501571/product_1_qjnduj.png",
+    "category": "Vegetables",
+    "rating": "(4.5)",
+    "product_name": "Fresh organic villa farm lomon 500gm pack",
+    "discount_price": "$120.25",
+    "old_price": "$123.25"
+  },
+  {
+    "slug": "best-snakes-with-hazel-nut-pack-200gm",
+    "image": "https://res.cloudinary.com/dxwlupbbq/image/upload/v1769501567/popular_product_1_xgoqye.png",
+    "category": "Snacks",
+    "rating": "(5.0)",
+    "product_name": "Best snakes with hazel nut pack 200gm",
+    "discount_price": "$145",
+    "old_price": "$160"
+  },
+  {
+    "slug": "fresh-organic-apple-1kg-simla-marming",
+    "image": "https://res.cloudinary.com/dxwlupbbq/image/upload/v1769501464/product_12_l4pemn.png",
+    "category": "Fruits",
+    "rating": "(4.5)",
+    "product_name": "Fresh organic apple 1kg simla marming",
+    "discount_price": "$120.25",
+    "old_price": "$123.25"
+  },
+  {
+    "slug": "organic-fresh-venila-farm-watermelon-5kg",
+    "image": "https://res.cloudinary.com/dxwlupbbq/image/upload/v1769501461/product_4_xcgb0c.png",
+    "category": "Fruits",
+    "rating": "(3.2)",
+    "product_name": "Organic fresh venila farm watermelon 5kg",
+    "discount_price": "$50.30",
+    "old_price": "$72.60"
+  },
+  {
+    "slug": "sweet-crunchy-nut-mix-250gm-pack",
+    "image": "https://res.cloudinary.com/dxwlupbbq/image/upload/v1769501458/product_5_rg0r9q.png",
+    "category": "Snacks",
+    "rating": "(5.0)",
+    "product_name": "Sweet crunchy nut mix 250gm pack",
+    "discount_price": "$120.25",
+    "old_price": "$123.25"
+  },
+  {
+    "slug": "delicious-white-baked-fresh-bread-and-toast",
+    "image": "https://res.cloudinary.com/dxwlupbbq/image/upload/v1769501461/product_6_zkktit.png",
+    "category": "Bakery",
+    "rating": "(5.0)",
+    "product_name": "Delicious white baked fresh bread and toast",
+    "discount_price": "$20",
+    "old_price": "$22.10"
+  },
+  {
+    "slug": "delicious-white-baked-fresh-bread-and-toast",
+    "image": "https://res.cloudinary.com/dxwlupbbq/image/upload/v1769501461/product_7_u3hygp.png",
+    "category": "Bakery",
+    "rating": "(5.0)",
+    "product_name": "Delicious white baked fresh bread and toast",
+    "discount_price": "$20",
+    "old_price": "$22.10"
+  },
+  {
+    "slug": "delicious-white-baked-fresh-bread-and-toast",
+    "image": "https://res.cloudinary.com/dxwlupbbq/image/upload/v1769501461/product_8_iz4oww.png",
+    "category": "Bakery",
+    "rating": "(5.0)",
+    "product_name": "Delicious white baked fresh bread and toast",
+    "discount_price": "$20",
+    "old_price": "$22.10"
+  },
+  {
+    "slug": "delicious-white-baked-fresh-bread-and-toast",
+    "image": "https://res.cloudinary.com/dxwlupbbq/image/upload/v1769501461/product_9_ui5vs1.png",
+    "category": "Bakery",
+    "rating": "(5.0)",
+    "product_name": "Delicious white baked fresh bread and toast",
+    "discount_price": "$20",
+    "old_price": "$22.10"
+  },
+  {
+    "slug": "fresh-organic-villa-farm-lomon-500gm-pack",
+    "image": "https://res.cloudinary.com/dxwlupbbq/image/upload/v1769501571/product_1_qjnduj.png",
+    "category": "Vegetables",
+    "rating": "(4.5)",
+    "product_name": "Fresh organic villa farm lomon 500gm pack",
+    "discount_price": "$120.25",
+    "old_price": "$123.25"
+  },
+  {
+    "slug": "best-snakes-with-hazel-nut-pack",
+    "image": "https://res.cloudinary.com/dxwlupbbq/image/upload/v1769501567/popular_product_1_xgoqye.png",
+    "category": "Snacks",
+    "rating": "(5.0)",
+    "product_name": "Best snakes with hazel nut pack",
+    "discount_price": "$145",
+    "old_price": "$150"
+  },
+  {
+    "slug": "fresh-organic-apple-1kg-simla-marming",
+    "image": "https://res.cloudinary.com/dxwlupbbq/image/upload/v1769501571/product_1_qjnduj.png",
+    "category": "Fruits",
+    "rating": "(4.5)",
+    "product_name": "Fresh organic apple 1kg simla marming",
+    "discount_price": "$120.25",
+    "old_price": "$123.25"
+  }
+]

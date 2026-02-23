@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Fetch</title>
+</head>
+<style>
+    ul{
+        display: flex;
+        gap: 30px;
+    }
+    ul li{
+        list-style: none;
+        border: 1px solid black;
+        padding: 4px;
+    }
+</style>
+<body>
+    <h1>API Page</h1>
+    <ul>
+        <li>FistName</li>
+        <li>LastName</li>
+        <li>Email</li>
+        <li>PasswordName</li>
+        <li>Address</li>
+    </ul>
+
+    <div class="userdetail">
+        <p id="firstname"></p> 
+        <p id="email"></p>
+        <button id="getUsers" >GetUsers</button> <button onclick="deleteUser('macktech28@gmail.com')">Delete</button>
+    </div>
+
+
+
+    <script>
+        let firstname = document.getElementById("firstname");
+        let email = document.getElementById("email");
+        let password= document.getElementById("password");
+        let getUserbtn = document.getElementById("getUsers");
+
+       window.onload =  ()=>{
+
+            fetch("http://localhost:3000/users")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data[0].firstname);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+
+
+
+        deleteUser = (email) => {
+
+            console.log("Deleting User....")
+            fetch(`http://localhost:3000/api/user/${email}`,
+                {
+                    method: "DELETE",
+                }
+            )
+            .then(res => res.json())
+            .then(data => console.log(data.message));
+
+        }
+        
+        
+    </script>
+</body>
+
+</html>
