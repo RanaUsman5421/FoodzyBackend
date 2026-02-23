@@ -1,9 +1,10 @@
 /* =============================================
    CENTRALIZED ANIMATIONS FOR ALL PAGES
+   SAFE VERSION - Elements always visible
    ============================================= */
 
 /* =============================================
-   BASE ANIMATION CLASSES
+   KEYFRAME ANIMATIONS
    ============================================= */
 
 /* Fade In Up Animation */
@@ -162,94 +163,49 @@
 }
 
 /* =============================================
-   ANIMATION CLASSES
+   SAFE ANIMATION CLASSES
+   Elements are ALWAYS visible - animations are enhancements only
    ============================================= */
 
-/* Base animation classes */
+/* Base animation classes - VISIBLE BY DEFAULT */
 .animate-fade-in {
-    opacity: 0;
-    transition: opacity 0.6s ease-out;
-}
-
-.animate-fade-in.animate-active {
-    opacity: 1;
+    /* Always visible - animation adds subtle fade effect */
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 .animate-fade-in-up {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-fade-in-up.animate-active {
-    opacity: 1;
-    transform: translateY(0);
+    /* Always visible */
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 .animate-fade-in-down {
-    opacity: 0;
-    transform: translateY(-40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-fade-in-down.animate-active {
-    opacity: 1;
-    transform: translateY(0);
+    /* Always visible */
+    animation: fadeInDown 0.6s ease-out forwards;
 }
 
 .animate-fade-in-left {
-    opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-fade-in-left.animate-active {
-    opacity: 1;
-    transform: translateX(0);
+    /* Always visible */
+    animation: fadeInLeft 0.6s ease-out forwards;
 }
 
 .animate-fade-in-right {
-    opacity: 0;
-    transform: translateX(40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-fade-in-right.animate-active {
-    opacity: 1;
-    transform: translateX(0);
+    /* Always visible */
+    animation: fadeInRight 0.6s ease-out forwards;
 }
 
 .animate-scale-in {
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-scale-in.animate-active {
-    opacity: 1;
-    transform: scale(1);
+    /* Always visible */
+    animation: scaleIn 0.6s ease-out forwards;
 }
 
 .animate-bounce-in {
-    opacity: 0;
-    transform: scale(0.3);
-    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.animate-bounce-in.animate-active {
-    opacity: 1;
-    transform: scale(1);
+    /* Always visible */
+    animation: bounceIn 0.6s ease-out forwards;
 }
 
 .animate-rotate-in {
-    opacity: 0;
-    transform: rotate(-180deg) scale(0.5);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-rotate-in.animate-active {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
+    /* Always visible */
+    animation: rotateIn 0.6s ease-out forwards;
 }
 
 /* Continuous animations */
@@ -269,16 +225,16 @@
    STAGGERED ANIMATION DELAYS
    ============================================= */
 
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
-.delay-6 { transition-delay: 0.6s; }
-.delay-7 { transition-delay: 0.7s; }
-.delay-8 { transition-delay: 0.8s; }
-.delay-9 { transition-delay: 0.9s; }
-.delay-10 { transition-delay: 1s; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+.delay-8 { animation-delay: 0.8s; }
+.delay-9 { animation-delay: 0.9s; }
+.delay-10 { animation-delay: 1s; }
 
 /* =============================================
    HOVER ANIMATIONS
@@ -357,18 +313,12 @@
 }
 
 /* =============================================
-   CARD ANIMATIONS
+   CARD ANIMATIONS - SAFE VERSION
    ============================================= */
 
 .card-animate {
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
-    transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
-}
-
-.card-animate.animate-active {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+    /* Always visible - animation adds subtle movement */
+    animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .card-animate:hover {
@@ -376,18 +326,12 @@
 }
 
 /* =============================================
-   FORM ANIMATIONS
+   FORM ANIMATIONS - SAFE VERSION
    ============================================= */
 
 .form-group-animate {
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.form-group-animate.animate-active {
-    opacity: 1;
-    transform: translateX(0);
+    /* Always visible */
+    animation: fadeInLeft 0.4s ease-out forwards;
 }
 
 .input-animate {
@@ -455,8 +399,6 @@
    ============================================= */
 
 .page-enter {
-    opacity: 0;
-    transform: translateY(20px);
     animation: fadeInUp 0.5s ease-out forwards;
 }
 
@@ -465,7 +407,7 @@
    ============================================= */
 
 .red-line-animate {
-    animation: fadeInDown 0.5s ease-out;
+    animation: fadeInDown 0.5s ease-out forwards;
 }
 
 /* =============================================
@@ -509,12 +451,8 @@
    ============================================= */
 
 .progress-bar-animate {
-    width: 0;
+    width: var(--progress-width, 100%);
     transition: width 1s ease-out;
-}
-
-.progress-bar-animate.animate-active {
-    width: var(--progress-width);
 }
 
 /* =============================================
@@ -522,14 +460,7 @@
    ============================================= */
 
 .modal-animate {
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.modal-animate.animate-active {
-    opacity: 1;
-    transform: scale(1);
+    animation: scaleIn 0.3s ease-out forwards;
 }
 
 /* =============================================
@@ -537,14 +468,11 @@
    ============================================= */
 
 .tab-content {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    animation: fadeInUp 0.3s ease-out forwards;
 }
 
 .tab-content.active {
-    opacity: 1;
-    transform: translateY(0);
+    /* Already visible */
 }
 
 /* =============================================
@@ -552,31 +480,20 @@
    ============================================= */
 
 .dropdown-animate {
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    animation: fadeInDown 0.3s ease-out forwards;
 }
 
 .dropdown-animate.show {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+    /* Already visible */
 }
 
 /* =============================================
-   SCROLL ANIMATION TRIGGER
+   SCROLL ANIMATION TRIGGER - SAFE VERSION
    ============================================= */
 
 .scroll-animate {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.scroll-animate.animate-in {
-    opacity: 1;
-    transform: translateY(0);
+    /* Always visible - animation adds subtle movement when triggered */
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 /* =============================================
@@ -591,36 +508,15 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-    
-    .animate-fade-in,
-    .animate-fade-in-up,
-    .animate-fade-in-down,
-    .animate-fade-in-left,
-    .animate-fade-in-right,
-    .animate-scale-in,
-    .animate-bounce-in,
-    .animate-rotate-in,
-    .card-animate,
-    .scroll-animate {
-        opacity: 1;
-        transform: none;
-    }
 }
 
 /* =============================================
-   SPECIFIC PAGE ANIMATIONS
+   SPECIFIC PAGE ANIMATIONS - SAFE VERSION
    ============================================= */
 
 /* Shop Page */
 .shop-product {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.shop-product.animate-in {
-    opacity: 1;
-    transform: translateY(0);
+    animation: fadeInUp 0.4s ease-out forwards;
 }
 
 /* Product Page */
@@ -637,62 +533,32 @@
 }
 
 .product-detail-section {
-    opacity: 0;
-    transform: translateX(20px);
-    transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
-}
-
-.product-detail-section.animate-in {
-    opacity: 1;
-    transform: translateX(0);
+    animation: fadeInRight 0.5s ease-out forwards;
 }
 
 /* Checkout Page */
 .checkout-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.checkout-section.animate-in {
-    opacity: 1;
-    transform: translateY(0);
+    animation: fadeInUp 0.5s ease-out forwards;
 }
 
 /* Login/Signup Page */
 .login-container, .signup-container {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: scaleIn 0.5s ease-out forwards;
 }
 
-.login-container.animate-in, .signup-container.animate-in {
-    opacity: 1;
-    transform: scale(1);
+/* Slide Up Animation */
+.animate-slide-up {
+    animation: fadeInUp 0.5s ease-out forwards;
 }
 
 /* FAQ Page */
 .faq-item {
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.faq-item.animate-in {
-    opacity: 1;
-    transform: translateX(0);
+    animation: fadeInLeft 0.4s ease-out forwards;
 }
 
 /* Order Success Page */
 .success-content {
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.success-content.animate-in {
-    opacity: 1;
-    transform: scale(1);
+    animation: scaleIn 0.6s ease-out forwards;
 }
 
 .success-icon {
@@ -701,24 +567,10 @@
 
 /* About Page */
 .about-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.about-section.animate-in {
-    opacity: 1;
-    transform: translateY(0);
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 /* Blog Page */
 .blog-card {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.blog-card.animate-in {
-    opacity: 1;
-    transform: translateY(0);
+    animation: fadeInUp 0.5s ease-out forwards;
 }

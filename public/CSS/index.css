@@ -230,16 +230,19 @@ body{
 
 .products-container{
     width: 75%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
 
 .product-container{
-    width: 24%;
     border: #DEDEDE 1px solid;
-    height: 100%;
+    min-height: 350px;
     border-radius: 5px;
-    padding: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-container .product-image{
@@ -262,6 +265,7 @@ body{
 
 .product-container .star{
     margin-top: 4px;
+    width: 14px;
 }
 
 .price-div{
@@ -301,7 +305,7 @@ body{
     color: white;
     border: none;
     outline: none;
-    padding: 7px 29%;
+    padding: 7px;
     width: 100%;
     font-family: "Poppins", sans-serif;
     border-radius: 5px;

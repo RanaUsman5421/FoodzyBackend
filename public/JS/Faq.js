@@ -85,53 +85,6 @@ footer.innerHTML = `<div class="footer-main">
                 </div>
             </div>`
 
-            let navbar = document.querySelector("nav");
-            navbar.innerHTML = `<div class="nav-1">
-            <img src="./Assets/bars.png" alt="">
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="FAQ.html">FAQ</a></li>
-                <li><a href="">Signup</a></li>
-                <li><a href="">Products</a></li>
-            </ul>
-            <p> <i class="fa-solid fa-phone"></i> +(123) (456) 7890</p>
-        </div>
-        <hr>
-
-        <div class="nav-2">
-
-            <div class="logo-container">
-                <div>
-                    <img src="./Assets/logo.png" alt="">
-                </div>
-                <div>
-                    <h2>Foodzy</h2>
-                    <p>A Treasure of Tastes</p>
-                </div>
-            </div>
-
-            <div class="search-container">
-                <input type="text" placeholder="Search here">
-                <select name="" id="">
-                    <option value="">All Categories</option>
-                    <option value="">Burgers</option>
-                    <option value="">Pizzas</option>
-                </select>
-
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-
-            <div class="icons-container">
-                <span>Wishlist</span>
-                <i class="fa-solid fa-heart"></i>
-                <span>Cart</span>
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span>Account</span>
-                <i class="fa-solid fa-user"></i>
-            </div>
-        </div>`
 
 
         let faq_data = [

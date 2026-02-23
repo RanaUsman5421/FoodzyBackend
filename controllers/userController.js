@@ -61,20 +61,21 @@ exports.loginUser = async (req, res) => {
     try {
         const user = await User.findOne({ email }).select('+password');
         if (!user) {
-            res.send('User Not Found');
+            return res.status(404).json({ success: false, message: 'User Not Found' });
         }
-        
-        const isMatch = await bcrypt.compare(password, user.password);
 
+        const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            return res.status(401).send("Invalid password");
+            return res.status(401).json({ success: false, message: 'Invalid password' });
         }
+
         req.session.userId = user._id;
-        
-        res.sendFile(path.join(__dirname, '../public', 'shop.html'))
+
+        // Respond with JSON for AJAX/fetch login
+        return res.json({ success: true, redirect: '/shop.html' });
     } catch(error){
-        res.send("Login Failed")
         console.log(error);
+        return res.status(500).json({ success: false, message: 'Login Failed' });
     }
     
 

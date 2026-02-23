@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./CSS/signup.css">
     <link rel="stylesheet" href="./CSS/Navbar.css">
     <link rel="stylesheet" href="./CSS/responsive.css">
+    <link rel="stylesheet" href="./CSS/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css"
         integrity="sha512-WxpJXPm/Is1a/dzEdhdaoajpgizHQimaLGL/QqUIAjIihlQqlPQb1V9vkGs9+VzXD7rgI6O+UsSKl4u5K36Ydw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,53 +19,53 @@
 
 
     <div id="navbar"></div>
-    <div class="red-line">
+    <div class="red-line red-line-animate">
         <p>SignUp</p>
         <p>Home - SignUp</p>
     </div>
 
 
-    <div class="signup-module">
+    <div class="signup-module animate-scale-in">
         <i class="fa-regular fa-circle-check fa-bounce" style="color: #e52424;"></i>
         <p>Signup Successfully!</p>
         <a href="login.html">Login</a>
     </div>
     <form id="signupForm">
-        <div class="login-logo">
+        <div class="login-logo animate-fade-in-down">
             <img src="./Assets/login_logo.png" alt="">
         </div>
 
         <div class="grid-inputs">
-            <div>
+            <div class="animate-fade-in-up">
                 <p>First Name*</p>
                 <input type="text" placeholder="Enter Your First Name" id="firstname" required name="firstname">
             </div>
-            <div>
+            <div class="animate-fade-in-up">
                 <p>Last Name*</p>
                 <input type="text" placeholder="Enter Your Last Name" id="lastname" required name="lastname">
             </div>
-            <div>
+            <div class="animate-fade-in-up">
                 <p>Password*</p>
                 <input type="password" placeholder="Password" id="password" required name="password">
             </div>
-            <div>
+            <div class="animate-fade-in-up">
                 <p>Confirm Password*</p>
                 <input type="password" placeholder="Confirm Password" id="c-password" required name="c-password">
                 <small id="errorMsg"></small>
             </div>
 
-            <div class="full-input">
+            <div class="full-input animate-fade-in-up">
                 <p>Email*</p>
                 <input type="email" placeholder="Enter Your Email" id="email" required name="email">
             </div>
 
-            <div class="submit-btn">
-                <button type="button" id="sendCodeBtn">Get Verification Code</button>
+            <div class="submit-btn animate-fade-in-up">
+                <button type="button" id="sendCodeBtn" class="btn-animate">Get Verification Code</button>
             </div>
-            <div class="full-input">
+            <div class="full-input animate-fade-in-up">
                 <input type="number" name="code" id="code" placeholder="Eneter Verification Code">
                 <div class="submit-btn">
-                    <button type="button" id="verifyBtn" class="submit-button">Submit</button>
+                    <button type="button" id="verifyBtn" class="submit-button btn-animate">Submit</button>
                     <a href="/login">Login?</a>
                 </div>
             </div>
@@ -78,6 +79,7 @@
     
     <script src="./JS/Faq.js"></script>
     <script src="./JS/Navbar.js"></script>
+    <script src="./JS/animations.js"></script>
     <script>
         let password = document.getElementById('password');
         let c_password = document.getElementById('c-password');

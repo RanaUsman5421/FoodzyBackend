@@ -236,6 +236,18 @@ footer{
     margin-top: 20px;
 }
 
+.footer-bottom {
+    background: #2d3436;
+    padding: 15px 8%;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85rem;
+}
+
 .nav-1 .mobile-nav{
     position: absolute;
     background: white;

@@ -2,8 +2,11 @@
    ENHANCED RESPONSIVE DESIGN
    ============================================ */
 
-/* Tablet Responsive Design */
+/* ============================================
+   TABLET RESPONSIVE (501px - 768px)
+   ============================================ */
 @media screen and (min-width: 501px) and (max-width: 768px) {
+    /* Navbar */
     .nav-1 { 
         padding: 10px 5%; 
         flex-wrap: wrap;
@@ -27,6 +30,8 @@
     .logo-container h2 { 
         font-size: 1.5rem; 
     }
+    
+    /* Hero Section */
     section { 
         height: 60vh; 
     }
@@ -34,14 +39,72 @@
         width: 250px; 
         height: 250px; 
     }
+    .hero-button-container {
+        left: 5%;
+        bottom: 50px;
+    }
+    .hero-social-container {
+        right: 20px;
+        bottom: 5px;
+    }
+    .hero-social-container p {
+        font-size: 0.8rem;
+    }
+    .hero-icons-container i {
+        width: 28px;
+        padding: 8px 0;
+        font-size: 0.85rem;
+    }
+    
+    /* Categories */
+    .categories {
+        padding: 15px 5%;
+    }
+    .categories-container {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
     .categories-container .single-category-container { 
         width: 30%; 
     }
+    
+    /* Best Sales */
+    .bestSales {
+        padding: 15px 5%;
+    }
+    .bestSales-main {
+        flex-direction: column;
+    }
+    .bestSales-main-img {
+        width: 100%;
+        height: 180px;
+    }
     .products-container { 
-        flex-wrap: wrap; 
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
     .product-container { 
-        width: 48%; 
+        min-height: 300px;
+        margin-bottom: 0;
+    }
+    
+    /* Special Dishes */
+    .special-dishes {
+        padding: 15px 5%;
+    }
+    .dishes-container {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .dish-container {
+        width: 45%;
+    }
+    
+    /* Deals */
+    .deals {
+        padding: 15px 5%;
     }
     .deals-container { 
         flex-wrap: wrap; 
@@ -49,8 +112,61 @@
     .deal-container { 
         width: 48%; 
     }
+    
+    /* Choose Us */
+    .choose-us {
+        padding: 15px 5%;
+    }
+    .choose {
+        flex-direction: column;
+    }
+    .choose-img {
+        width: 100%;
+    }
+    .choose-detail {
+        width: 100%;
+        padding: 20px 0;
+    }
+    .choose-div {
+        padding: 12px;
+    }
+    
+    /* Newsletter */
+    .news-letter {
+        padding: 15px 5%;
+    }
+    .news-letter-bg {
+        height: 250px;
+    }
+    .news-letter-input {
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    /* Labels */
+    .labels {
+        padding: 15px 5%;
+    }
+    .labels-container { 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .label {
+        width: 45%;
+    }
+    
+    /* Footer - 2 columns */
     .footer-main { 
-        grid-template-columns: 1fr 1fr; 
+        grid-template-columns: 1fr 1fr;
+        padding: 5% 5%;
+        gap: 30px;
+    }
+    .footer-1 {
+        grid-column: 1 / -1;
+    }
+    .footer-4 {
+        grid-column: 1 / -1;
     }
     
     /* Show hamburger on tablet */
@@ -71,13 +187,11 @@
     .nav-1 .mobile-nav.menu-active {
         display: block;
     }
-    .nav-1 .mobile-nav li {
-        padding: 10px 0;
-        border-bottom: 1px solid #eee;
-    }
 }
 
-/* Large Desktop */
+/* ============================================
+   LARGE DESKTOP (1200px+)
+   ============================================ */
 @media screen and (min-width: 1200px) {
     .nav-1, .nav-2 { 
         padding: 10px 12%; 
@@ -92,10 +206,37 @@
 }
 
 /* ============================================
+   MEDIUM DEVICES (769px - 1024px)
+   ============================================ */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Hero */
+    section {
+        height: 70vh;
+    }
+    .chick-img img {
+        width: 300px;
+        height: 300px;
+    }
+    
+    /* Footer */
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        padding: 4% 6%;
+        gap: 25px;
+    }
+    .footer-1 {
+        grid-column: 1 / -1;
+    }
+    .footer-4 {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ============================================
    MOBILE RESPONSIVE DESIGN (max-width: 500px)
    ============================================ */
 @media screen and (max-width: 500px) {
-    /* Navbar Responsive Design */
+    /* Navbar */
     .nav-1 {
         padding: 10px;
         justify-content: space-between;
@@ -112,7 +253,7 @@
         display: none;
     }
     
-    /* Mobile Navigation Menu */
+    /* Mobile Navigation */
     .nav-1 .mobile-nav {
         display: none;
         position: fixed;
@@ -126,23 +267,18 @@
         padding: 60px 20px 20px;
         flex-direction: column;
     }
-    
     .nav-1 .mobile-nav.menu-active {
         display: flex !important;
     }
-    
     .nav-1 .mobile-nav li {
         padding: 15px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
     .nav-1 .mobile-nav li a {
         color: white;
         font-size: 1.2rem;
         font-weight: 500;
     }
-    
-    /* Close button for mobile menu */
     .mobile-nav::before {
         content: '\f00d';
         font-family: 'Font Awesome 6 Free';
@@ -178,220 +314,379 @@
         display: none;
     }
 
-    /* Hero Section Responsive Design */
+    /* Hero Section */
     section {
-        height: 200px;
+        height: 300px;
+    }
+    .bg-image {
+        background-position: left center;
     }
     .chick-img {
         position: absolute;
-        right: 0;
+        right: -20px;
+        top: 30%;
+    }
+    .chick-img img {
+        width: 120px;
+        height: 120px;
     }
     .hero-button-container {
-        bottom: 6%;
-        left: 6%;
+        bottom: 15%;
+        left: 5%;
     }
     .hero-button-container i {
-        font-size: 0.6rem;
-        padding: 13px 0px;
-        width: 30px;
+        font-size: 0.7rem;
+        padding: 10px 0;
+        width: 35px;
     }
     .hero-button-container button {
-        padding: 10px 10px;
-        font-size: 0.6rem;
+        padding: 8px 12px;
+        font-size: 0.7rem;
     }
     .hero-social-container {
         display: none;
     }
-    .chick-img img {
-        width: 150px;
-        height: auto;
-    }
 
-    /* Categories Section Responsive Design */
+    /* Categories */
     .categories {
-        padding: 10px 10px;
+        padding: 15px;
+        margin-top: 10%;
+    }
+    .categories .favorite {
+        font-size: 0.9rem;
+        margin-top: 5%;
+    }
+    .categories .category {
+        font-size: 1.5rem;
     }
     .categories-container {
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
         gap: 10px;
+        margin-top: 20px;
     }
     .categories-container .single-category-container {
         width: 45%;
+        padding: 10px 5px;
+    }
+    .single-category-container .category-image {
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+    }
+    .single-category-container p {
+        font-size: 0.8rem;
+    }
+    .single-category-container p:last-child {
+        font-size: 0.7rem;
     }
 
-    /* Best Sellers Section Responsive Design */
+    /* Best Sellers */
     .bestSales {
-        padding: 10px 10px;
-    }
-    .bestSales-heading h2 {
-        font-size: 1.5rem;
+        padding: 15px;
+        margin-top: 10%;
     }
     .bestSales-heading {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 15px;
     }
-    .bestSales div span {
-        font-size: 0.6rem;
+    .bestSales-heading h2 {
+        font-size: 1.3rem;
+    }
+    .bestSales-heading div {
+        font-size: 0.7rem;
     }
     .bestSales-main {
         flex-direction: column;
+        padding: 20px 0;
     }
     .bestSales-main-img {
         width: 100%;
         height: 150px;
-        padding: 10px 20px;
+        padding: 15px;
     }
     .bestSales-main-img p {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     .bestSales-main-img button {
-        bottom: 10px;
+        bottom: 15px;
+        right: 15px;
     }
     .products-container {
         width: 100%;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 15px;
     }
     .product-container {
-        width: 48%;
-        margin-bottom: 20px;
-        gap: 10px;
+        min-height: 280px;
+        margin-bottom: 0;
+    .product-container .product-image {
+        height: 35%;
     }
-    .product-container button {
-        padding: 4px 5px;
+    .product-container p {
+        font-size: 0.8rem;
+    }
+    .product-container .star img {
+        width: 5px;
+    }
+    .price-div {
+        margin-top: 8px;
+    }
+    .price-div .price {
+        font-size: 0.8rem;
+    }
+    .cart-button button {
+        padding: 6px 20%;
+        margin-top: 10px;
     }
 
-    /* Dishes Section Responsive Design */
+    /* Special Dishes */
     .special-dishes {
-        padding: 10px 10px;
+        padding: 15px;
+        margin-top: 5%;
     }
     .special-dishes .dishes-text {
+        font-size: 0.85rem;
         text-align: center;
-        font-size: 1.1rem;
     }
     .dishes-heading {
+        font-size: 1.3rem;
         text-align: center;
-        font-size: 1.5rem;
     }
     .dishes-container {
         flex-direction: column;
-        align-items: center;
+        padding: 15px 0;
     }
     .dish-container {
-        width: 90%;
+        width: 100%;
         margin-bottom: 20px;
-        text-align: center;
+        padding: 10px;
     }
-
-    /* Choose us section responsive design */
-    .choose-us {
-        padding: 10px 10px;
-    }
-    .choose {
-        flex-direction: column;
-    }
-    .choose-img {
-        width: 100%;
-        margin-top: 20px;
-    }
-    .choose-img img {
-        width: 100%;
-        height: 200px;
-    }
-    .choose-detail {
-        margin-top: 20px;
-    }
-    .choose-div .choose-div-detail h2 {
+    .dish-detail .dish-name {
         font-size: 1rem;
     }
-    .choose-detail h2 {
-        font-size: 1.5rem;
+    .dish-detail .dish-desc {
+        font-size: 0.75rem;
     }
-    .choose-detail {
-        width: 100%;
+    .icon-div {
+        width: 45px;
+        height: 45px;
     }
-
-    /* Newsletter Section Responsive Design */
-    .news-letter {
-        padding: 10px 10px;
-    }
-    .news-letter-bg {
-        width: 100%;
-        height: 200px;
-        background-size: cover;
-    }
-    .news-letter-detail h2 {
-        font-size: 0.9rem;
-    }
-    .news-letter-detail p {
-        font-size: 0.7rem;
-    }
-    .news-letter-input {
-        width: 90%;
-        display: flex;
-        align-items: center;
-        margin-top: 40px;
-    }
-    .news-letter-input input {
-        width: 55%;
-        padding: 10px;
-        font-size: 0.7rem;
+    .icon-div .heart-icon {
+        font-size: 1rem;
     }
 
-    /* Labels responsive design */
-    .labels {
-        padding: 10px 10px;
-    }
-    .label {
-        width: 100%;
-    }
-    .labels-container { 
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    /* Deals of the Day Section Responsive Design */
+    /* Deals */
     .deals {
-        padding: 10px 10px;
+        padding: 15px;
+        margin-top: 5%;
+    }
+    .deals-heading {
+        font-size: 1.3rem;
+        text-align: center;
     }
     .deals-container {
         flex-direction: column;
-        align-items: center;
-    }
-    .deals-heading {
-        text-align: center;
-        font-size: 1.5rem;
+        margin-top: 15px;
     }
     .deal-container {
-        width: 90%;
-        margin-bottom: 20px;
-        text-align: center;
+        width: 100%;
+        margin-bottom: 25px;
     }
-    .deal-container .deal-name {
-        font-size: 1rem;
-        text-align: left;
+    .deal-detail {
+        width: 95%;
+        padding: 8px;
+    }
+    .deal-detail .deal-name {
+        font-size: 0.9rem;
     }
     .rating {
-        width: 40%;
+        width: 60%;
     }
-    .by-food {
-        text-align: left;
+    .deals-price-div {
+        margin-top: 8px;
+    }
+    .price-button {
+        margin-top: 8px;
+    }
+    .deals-cart-button {
+        padding: 5px 12px;
+        font-size: 0.75rem;
     }
 
-    /* Footer Responsive Design */
-    .footer-main {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-        padding: 0px;
-        gap: 0px;
+    /* Choose Us */
+    .choose-us {
+        padding: 15px;
+        margin-top: 5%;
     }
-    .footer-1 {
+    .choose {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+    .choose-img {
+        width: 100%;
+    }
+    .choose-img img {
+        height: 180px;
+        object-fit: cover;
+    }
+    .choose-detail {
+        width: 100%;
+        padding: 15px 0;
+    }
+    .choose-detail h2 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    .choose-div {
+        flex-direction: row;
+        padding: 10px;
+        gap: 10px;
+    }
+    .choose-div-icon img {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+    .choose-div-detail h2 {
+        font-size: 0.9rem;
+    }
+    .choose-div-detail p {
+        font-size: 0.7rem;
+    }
+
+    /* Newsletter */
+    .news-letter {
+        padding: 15px;
+        margin-top: 5%;
+    }
+    .news-letter-bg {
+        height: 180px;
+        background-size: cover;
+    }
+    .news-letter-detail h2 {
+        font-size: 1rem;
+    }
+    .news-letter-detail p {
+        font-size: 0.75rem;
+    }
+    .news-letter-input {
+        width: 100%;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        padding: 5px;
+    }
+    .news-letter-input input {
+        width: 100%;
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+    .news-letter-input button {
+        width: 100%;
+        margin-top: 10px;
         padding: 10px;
     }
 
-    /* FAQ Responsive Design */
+    /* Labels */
+    .labels {
+        padding: 15px;
+        margin-top: 5%;
+    }
+    .labels-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .label {
+        width: 100%;
+        padding: 12px;
+    }
+    .label img {
+        width: 35px;
+        height: 35px;
+    }
+    .label h4 {
+        font-size: 0.85rem;
+    }
+    .label p {
+        font-size: 0.7rem;
+    }
+
+    /* Footer */
+    .footer-main {
+        grid-template-columns: 1fr;
+        padding: 5% 5%;
+        gap: 0;
+    }
+    .footer-1 {
+        padding: 15px 10px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .footer-logo img {
+        width: 40px;
+        height: 40px;
+    }
+    .footer-logo h3 {
+        font-size: 1.1rem;
+    }
+    .footer-1 .footer-1-text {
+        font-size: 0.8rem;
+        margin-top: 12px;
+    }
+    .footer-1-lines {
+        margin-top: 15px;
+    }
+    .footer-1-line {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .footer-1-line i {
+        font-size: 1rem;
+    }
+    .footer-1-line p {
+        font-size: 0.7rem;
+    }
+    .footer-2 {
+        padding: 15px 10px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .footer-2 h3 {
+        font-size: 1rem;
+    }
+    .footer-2-links a {
+        font-size: 0.8rem;
+        padding: 6px 0;
+    }
+    .footer-4 {
+        padding: 15px 10px;
+    }
+    .footer-4 h3 {
+        font-size: 1rem;
+    }
+    .footer-4-input {
+        padding: 8px;
+    }
+    .footer-4-input input {
+        font-size: 0.8rem;
+    }
+    .footer-4-icons i {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+        padding: 6px 0;
+    }
+    .footer-4-images {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .footer-4-images img {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* FAQ */
     .faq {
         padding: 10px 5px;
     }
@@ -403,18 +698,39 @@
         width: 100%;
     }
     .faq-div {
-        padding: 0px;
+        padding: 0;
     }
     .faq-questions {
         width: 100%;
         flex-direction: column;
         gap: 10px;
-        padding: 0px;
+        padding: 0;
         margin-top: 20px;
     }
     .faq h2 {
         text-align: center;
         padding: 10px;
+    }
+}
+
+/* ============================================
+   EXTRA SMALL DEVICES (max-width: 320px)
+   ============================================ */
+@media screen and (max-width: 320px) {
+    .categories-container .single-category-container {
+        width: 100%;
+    }
+    .product-container {
+        width: 100%;
+    }
+    .dish-container {
+        width: 100%;
+    }
+    .deal-container {
+        width: 100%;
+    }
+    .label {
+        width: 100%;
     }
 }
 
@@ -433,47 +749,10 @@
     }
 }
 
-/* Mobile menu animation */
 .mobile-nav {
     transition: all 0.3s ease-in-out;
 }
 
 .mobile-nav.menu-active {
     transform: translateX(0);
-}
-
-/* ============================================
-   ADDITIONAL RESPONSIVE IMPROVEMENTS
-   ============================================ */
-
-/* Small tablets */
-@media screen and (min-width: 600px) and (max-width: 768px) {
-    .categories-container .single-category-container {
-        width: 30%;
-    }
-    .product-container {
-        width: 48%;
-    }
-    .dish-container {
-        width: 45%;
-    }
-    .deal-container {
-        width: 48%;
-    }
-}
-
-/* Extra small devices */
-@media screen and (max-width: 320px) {
-    .categories-container .single-category-container {
-        width: 100%;
-    }
-    .product-container {
-        width: 100%;
-    }
-    .dish-container {
-        width: 100%;
-    }
-    .deal-container {
-        width: 100%;
-    }
 }

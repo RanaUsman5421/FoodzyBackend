@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/CSS/Navbar.css">
     <link rel="stylesheet" href="/CSS/index.css">
     <link rel="stylesheet" href="/CSS/responsive.css">
+    <link rel="stylesheet" href="/CSS/animations.css">
     <title>Foodzy</title>
 </head>
 <body>
@@ -23,16 +24,16 @@
             
             <div class="hero-button-container">
                 <i class="fa-solid fa-arrow-right"></i>
-                <button>Order Now</button>
+                <button class="btn-animate">Order Now</button>
             </div>
 
             <div class="hero-social-container">
                 <p>Follow Us On</p>
                 <div class="hero-icons-container">
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-youtube"></i>
-                    <i class="fa-brands fa-x-twitter"></i>
-                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook-f icon-animate"></i>
+                    <i class="fa-brands fa-youtube icon-animate"></i>
+                    <i class="fa-brands fa-x-twitter icon-animate"></i>
+                    <i class="fa-brands fa-instagram icon-animate"></i>
                 </div>
                 <p>Call US: 658-7854-9634</p>
                 <p>typeyourwebsitehere</p>
@@ -41,7 +42,7 @@
     </section>
 
 
-    <div class="categories">
+    <div class="categories animate-fade-in-up">
         <div>
             <p class="favorite">Customer Favorites</p>
             <p class="category">Popular Categories</p>
@@ -55,7 +56,7 @@
 
 
     <div class="bestSales">
-        <div class="bestSales-heading">
+        <div class="bestSales-heading animate-fade-in-up">
             <h2>Daily Best Sales</h2>
             <div>
                 <span>Featured</span>
@@ -66,9 +67,9 @@
 
 
         <div class="bestSales-main">
-            <div class="bestSales-main-img">
+            <div class="bestSales-main-img animate-fade-in-left">
                 <p>Bring nature into your home</p>
-                <button>Shop Now <i class="fa-solid fa-arrow-right"></i> </button>
+                <button class="btn-animate">Shop Now <i class="fa-solid fa-arrow-right"></i> </button>
             </div>
 
             <div class="products-container">
@@ -78,7 +79,7 @@
     </div>
 
 
-    <div class="special-dishes">
+    <div class="special-dishes animate-fade-in-up">
         <p class="dishes-text">SPECIAL DISHES</p>
         <h2 class="dishes-heading">Standout Dishes <br> Form Our Menu</h2>
 
@@ -87,23 +88,23 @@
     </div>
 
 
-    <div class="deals">
+    <div class="deals animate-fade-in-up">
         <h2 class="deals-heading">Deasl of the day</h2>
         <div class="deals-container">
 
         </div>
     </div>
 
-    <div class="choose-us">
+    <div class="choose-us animate-fade-in-up">
         <div class="choose">
-            <div class="choose-img">
+            <div class="choose-img img-zoom">
                 <img src="./Assets/choose_banner.png" alt="">
             </div>
             <div class="choose-detail">
                 <h2>Why People Choose Us?</h2>
 
 
-                <div class="choose-div">
+                <div class="choose-div hover-lift">
                     <div class="choose-div-icon">
                         <img src="./Assets/bike.png" alt="">
                     </div>
@@ -117,7 +118,7 @@
 
 
 
-                <div class="choose-div">
+                <div class="choose-div hover-lift">
                     <div class="choose-div-icon">
                         <img src="./Assets/variety.png" alt="">
                     </div>
@@ -131,7 +132,7 @@
 
 
 
-                <div class="choose-div">
+                <div class="choose-div hover-lift">
                     <div class="choose-div-icon">
                         <img src="./Assets/burger.png" alt="">
                     </div>
@@ -149,7 +150,7 @@
         </div>
     </div>
 
-    <div class="news-letter">
+    <div class="news-letter animate-fade-in-up">
         <div class="news-letter-bg">
             <div class="news-letter-detail">
                 <h2>Stay home & get your daily <br> needs from our shop</h2>
@@ -157,7 +158,7 @@
                 <form action="/subscribe" method="post" class="news-letter-input">
                     <i class="fa-regular fa-paper-plane"></i>
                     <input type="text" placeholder="Your Email Address" id="email" name="email">
-                    <button type="submit">Subscribe</button>
+                    <button type="submit" class="btn-animate">Subscribe</button>
                 </form>
             </div>
         </div>
@@ -168,7 +169,7 @@
         <div class="labels-container">
 
 
-            <div class="label">
+            <div class="label hover-lift">
                 <img src="./Assets/pic_1.png" alt="">
                 <div>
                     <h4><span class="counter" data-target="50" data-duration="2000">0</span>+ Best Prices & offers</h4>
@@ -177,7 +178,7 @@
             </div>
 
 
-            <div class="label">
+            <div class="label hover-lift">
                 <img src="./Assets/pic_2.png" alt="">
                 <div>
                     <h4><span class="counter" data-target="100" data-duration="2000">0</span>% Free Delivery</h4>
@@ -187,7 +188,7 @@
 
 
 
-            <div class="label">
+            <div class="label hover-lift">
                 <img src="./Assets/pic_3.png" alt="">
                 <div>
                     <h4><span class="counter" data-target="1000" data-duration="2000">0</span>+ Great Daily Deal</h4>
@@ -198,7 +199,7 @@
 
 
 
-            <div class="label">
+            <div class="label hover-lift">
                 <img src="./Assets/pic_4.png" alt="">
                 <div>
                     <h4><span class="counter" data-target="500" data-duration="2000">0</span>+ Wide Assortmant</h4>
@@ -207,7 +208,7 @@
             </div>
 
 
-            <div class="label">
+            <div class="label hover-lift">
                 <img src="./Assets/pic_5.png" alt="">
                 <div>
                     <h4><span class="counter" data-target="30" data-duration="2000">0</span>-Day Easy Returns</h4>
@@ -226,5 +227,6 @@
 
 <script src="./JS/index.js"></script>
 <script src="./JS/Navbar.js"></script>
+<script src="./JS/animations.js"></script>
 
 </html>

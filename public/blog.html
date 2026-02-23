@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/Navbar.css">
     <link rel="stylesheet" href="./CSS/blog.css">
+    <link rel="stylesheet" href="./CSS/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,15 +16,17 @@
 <body>
 
     <div id="navbar"></div>
-    <div class="red-line">
+    <div class="red-line red-line-animate">
         <p>Blog</p>
         <p>Home - Blog</p>
     </div>
 
 
     <div class="blog-main">
-        <div class="blog-1">
-            <img src="./Assets/blog_main.png" alt="">
+        <div class="blog-1 animate-fade-in-up">
+            <div class="img-zoom">
+                <img src="./Assets/blog_main.png" alt="">
+            </div>
             <p class="blog-breadcrum"><span>By Admin</span> / 07 Comment / Date - 09 ,09 ,2024</p>
             <div class="blog-heading">
                 <h2>Health Benifits of Row Food</h2>
@@ -38,24 +41,28 @@
 
         <div class="blog-2">
             <div class="blog-images">
-                <div class="blog-image">
-                    <img src="./Assets/blog_1.png" alt="">
+                <div class="blog-image animate-fade-in-up hover-lift">
+                    <div class="img-zoom">
+                        <img src="./Assets/blog_1.png" alt="">
+                    </div>
                     <div class="blog-image-text">
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <i class="fa-solid fa-arrow-right icon-animate"></i>
                         <p>Lorem ipsum dolor consectetur adipisicing elit. Molestias, dolorum!</p>
                     </div>
                 </div>
 
-                <div class="blog-image">
-                    <img src="./Assets/blog_2.png" alt="">
+                <div class="blog-image animate-fade-in-up hover-lift">
+                    <div class="img-zoom">
+                        <img src="./Assets/blog_2.png" alt="">
+                    </div>
                     <div class="blog-image-text">
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <i class="fa-solid fa-arrow-right icon-animate"></i>
                         <p>Lorem ipsum dolor consectetur adipisicing elit. Molestias, dolorum!</p>
                     </div>
                 </div>
             </div>
 
-            <div class="blog-2-text">
+            <div class="blog-2-text animate-fade-in-up">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat repellat earum architecto odit
                     soluta quas odio distinctio quae numquam? Quaerat nulla blanditiis
                     possimus quae. Iusto doloribus, est aliquam delectus pariatur voluptatem cum iste exercitationem
@@ -63,26 +70,26 @@
                 <p class="john-martin">John martin</p>
 
             </div>
-            <P class="blog-2-opentext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores officia magni explicabo fuga
+            <P class="blog-2-opentext animate-fade-in-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores officia magni explicabo fuga
                 molestiae architecto ipsa excepturi laudantium molestias, assumenda vel
                 fugiat hic exercitationem. Necessitatibus itaque et id! Ratione accusantium voluptatum optio rerum
                 facilis expedita.</P>
 
             <div class="blog-2-badge">
-                <div class="labels">
+                <div class="labels animate-fade-in-up">
                     <p>cabbage</p>
                     <p>Appetizer</p>
                     <p>Meat Food</p>
                 </div>
-                <div class="icons">
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-youtube"></i>
-                    <i class="fa-brands fa-x-twitter"></i>
-                    <i class="fa-brands fa-instagram"></i>
+                <div class="icons animate-fade-in-up">
+                    <i class="fa-brands fa-facebook-f icon-animate"></i>
+                    <i class="fa-brands fa-youtube icon-animate"></i>
+                    <i class="fa-brands fa-x-twitter icon-animate"></i>
+                    <i class="fa-brands fa-instagram icon-animate"></i>
                 </div>
             </div>
         </div>
-        <div class="pages">
+        <div class="pages animate-fade-in-up">
             <button class="previous">Previous</button>
             <div class="nmbr-btn">
                 <button>1</button>
@@ -102,6 +109,7 @@
     <footer></footer>
 
     <script src="./JS/Navbar.js"></script>
+    <script src="./JS/animations.js"></script>
 </body>
 
 </html>
