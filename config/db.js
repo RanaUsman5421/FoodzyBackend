@@ -1,14 +1,17 @@
 const mongoose = require('mongoose');
 
-// mongoose.connect(process.env.DB_URL)
-// .then(() => console.log("MongoDB connected"))
-// .catch(err => console.log(err));
-
-
-
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.DB_URL);
+    // Support multiple environment variable names
+    const mongoUri = process.env.DB_URL || process.env.MONGODB_URI || process.env.MONGO_URI;
+    
+    if (!mongoUri) {
+      console.error('MongoDB Error: No MongoDB URL found in environment variables.');
+      console.log('Please set DB_URL, MONGODB_URI, or MONGO_URI in your .env file.');
+      process.exit(1);
+    }
+    
+    await mongoose.connect(mongoUri);
     console.log('MongoDB Connected');
   } catch (error) {
     console.error('MongoDB Error:', error.message);
