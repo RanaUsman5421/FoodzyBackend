@@ -1,6 +1,15 @@
-
 const loginForm = document.getElementById('loginForm');
 const errorMessage = document.getElementById('errorMessage');
+
+// Helper function to show error
+function showError(message) {
+    if (errorMessage) {
+        errorMessage.style.display = 'block';
+        errorMessage.textContent = message;
+    } else {
+        alert(message);
+    }
+}
 
 // Fallback: Ensure login form is visible if animation fails
 window.addEventListener('DOMContentLoaded', function() {
@@ -19,54 +28,67 @@ window.addEventListener('DOMContentLoaded', function() {
     }, 600); // Wait for animation to run first
 });
 
-loginForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    errorMessage.style.display = 'none';
-    errorMessage.textContent = '';
-
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value;
-
-    if (!email || !password) {
-        showError('Please enter both email and password');
-        return;
-    }
-
-    try {
-        const response = await fetch('/loginform', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        });
-
-        const contentType = response.headers.get('content-type');
+// Exit early if loginForm is not found
+if (!loginForm) {
+    console.error('Login form not found!');
+} else {
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
         
-        if (contentType && contentType.includes('application/json')) {
-            const data = await response.json();
-            
-            if (data.success) {
-                window.location.href = '/shop.html';
-            } else {
-                showError(data.message || 'Login failed. Please check your credentials.');
-            }
-        } else {
-            const text = await response.text();
-            if (text.includes('shop.html') || response.url.includes('shop.html')) {
-                window.location.href = '/shop.html';
-            } else {
-                showError(text || 'Login failed. Please check your credentials.');
-            }
+        // Hide error message if element exists
+        if (errorMessage) {
+            errorMessage.style.display = 'none';
+            errorMessage.textContent = '';
         }
-    } catch (error) {
-        console.error('Login error:', error);
-        showError('An error occurred. Please try again.');
-    }
-});
 
-function showError(message) {
-    errorMessage.style.display = 'block';
-    errorMessage.textContent = message;
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+
+        if (!email || !password) {
+            showError('Please enter both email and password');
+            return;
+        }
+
+        try {
+            console.log('Attempting login with email:', email);
+            
+            const response = await fetch('/loginform', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include', // Important: Send cookies with the request
+                body: JSON.stringify({ email, password })
+            });
+
+            console.log('Response status:', response.status);
+            console.log('Response headers:', response.headers.get('content-type'));
+
+            const contentType = response.headers.get('content-type');
+            
+            if (contentType && contentType.includes('application/json')) {
+                const data = await response.json();
+                console.log('Response data:', data);
+                
+                if (data.success) {
+                    console.log('Login successful, redirecting to:', data.redirect);
+                    window.location.href = data.redirect;
+                } else {
+                    showError(data.message || 'Login failed. Please check your credentials.');
+                    console.error('Login failed:', data.message);
+                }
+            } else {
+                const text = await response.text();
+                console.log('Non-JSON response:', text);
+                if (text.includes('shop.html') || response.url.includes('shop.html')) {
+                    window.location.href = '/shop.html';
+                } else {
+                    showError(text || 'Login failed. Please check your credentials.');
+                }
+            }
+        } catch (error) {
+            console.error('Login error:', error);
+            showError('An error occurred. Please try again. Check console for details.');
+        }
+    });
 }

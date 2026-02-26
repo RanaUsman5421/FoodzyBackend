@@ -57,28 +57,63 @@ const loginLimiter = rateLimit({
 
 exports.loginUser = async (req, res) => {
     const { email, password } = req.body;
+    
+    console.log('=== LOGIN ATTEMPT ===');
+    console.log('Email:', email);
+    console.log('Request headers:', req.headers);
+    console.log('Session ID before login:', req.sessionID);
 
     try {
-        const user = await User.findOne({ email }).select('+password');
+        // Normalize email to lowercase for consistent lookup
+        const normalizedEmail = email.toLowerCase().trim();
+        console.log('Normalized email:', normalizedEmail);
+
+        const user = await User.findOne({ email: normalizedEmail }).select('+password');
+        
         if (!user) {
+            console.log('User not found for email:', email);
             return res.status(404).json({ success: false, message: 'User Not Found' });
         }
 
+        console.log('User found:', user.email);
+        
         const isMatch = await bcrypt.compare(password, user.password);
+        
         if (!isMatch) {
+            console.log('Invalid password for user:', email);
             return res.status(401).json({ success: false, message: 'Invalid password' });
         }
 
+        // Set session userId
         req.session.userId = user._id;
-
-        // Respond with JSON for AJAX/fetch login
-        return res.json({ success: true, redirect: '/shop.html' });
+        console.log('Session userId set:', req.session.userId);
+        console.log('Session ID:', req.session.id);
+        
+        // Save session explicitly
+req.session.save((err) => {
+            if (err) {
+                console.error('Session save error:', err);
+                return res.status(500).json({ success: false, message: 'Session error' });
+            }
+            console.log('Session saved successfully');
+            
+            // Log successful login
+            console.log('=== LOGIN SUCCESSFUL ===');
+            console.log('User ID:', user._id);
+            console.log('Email:', user.email);
+            console.log('Session ID:', req.session.id);
+            console.log('============================');
+            
+            // Respond with JSON for AJAX/fetch login
+            return res.json({ success: true, redirect: '/shop.html' });
+        });
     } catch(error){
-        console.log(error);
-        return res.status(500).json({ success: false, message: 'Login Failed' });
+        console.error('=== LOGIN ERROR (Server) ===');
+        console.error('Error:', error);
+        console.error('Stack:', error.stack);
+        console.error('================================');
+        return res.status(500).json({ success: false, message: 'Login Failed: ' + error.message });
     }
-    
-
 }
 
 

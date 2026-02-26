@@ -23,6 +23,9 @@ const { validateProduct } = require('../validators/productValidator');
 const { placeOrder } = require('../controllers/orderController');
 const { subscribe } = require('../controllers/subscriptionController');
 
+// Import admin controller
+const adminController = require('../controllers/adminController');
+
 router.get('/page', (req, res) => {
   res.json({ message: "This is page route" });
 })
@@ -31,6 +34,48 @@ router.get('/page', (req, res) => {
 router.get("/api/message", (req, res) => {
   res.json({ message: "Hello from backend" });
 });
+
+
+// ======== ADMIN ROUTES ========
+
+// Admin login page
+router.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public', 'admin.html'));
+});
+
+// Admin login
+router.post('/api/admin/login', adminController.adminLogin);
+
+// Admin logout
+router.post('/api/admin/logout', adminController.adminLogout);
+
+// Check admin auth
+router.get('/api/admin/check-auth', adminController.checkAdminAuth);
+
+// Dashboard stats
+router.get('/api/admin/stats', adminController.getDashboardStats);
+
+// User management
+router.get('/api/admin/users', adminController.getAllUsers);
+router.get('/api/admin/users/:id', adminController.getUserById);
+router.put('/api/admin/users/:id', adminController.updateUser);
+router.delete('/api/admin/users/:id', adminController.deleteUser);
+router.post('/api/admin/users/:id/block', adminController.toggleUserBlock);
+router.post('/api/admin/users/:id/make-admin', adminController.makeAdmin);
+
+// Product management
+router.get('/api/admin/products', adminController.getAllProductsAdmin);
+router.get('/api/admin/products/:id', adminController.getProductById);
+router.post('/api/admin/products', upload.single('image'), adminController.createProduct);
+router.put('/api/admin/products/:id', upload.single('image'), adminController.updateProduct);
+router.delete('/api/admin/products/:id', adminController.deleteProduct);
+
+// Order management
+router.get('/api/admin/orders', adminController.getAllOrders);
+router.put('/api/admin/orders/:id', adminController.updateOrderStatus);
+
+
+// ======== END ADMIN ROUTES ========
 
 
 router.get('/login', (req, res) => {
@@ -305,6 +350,124 @@ router.get('/api/user', async (req, res) => {
     });
   } catch (error) {
     res.json({ loggedIn: false });
+  }
+});
+
+// ====== FORGOT PASSWORD ROUTES ======
+
+// Get forgot password page
+router.get('/forgot-password', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public', 'forgot-password.html'));
+});
+
+// Generate reset code and send email
+router.post('/forgot-password', async (req, res) => {
+  try {
+    const { email } = req.body;
+    
+    // Find user by email
+    const user = await User.findOne({ email: email.toLowerCase() });
+    
+    if (!user) {
+      return res.json({ success: false, message: 'User not found with this email address' });
+    }
+    
+    // Generate 6-digit verification code
+    const resetCode = Math.floor(100000 + Math.random() * 900000).toString();
+    
+    // Store reset code and expiry (15 minutes from now)
+    user.resetPasswordToken = resetCode;
+    user.resetPasswordExpires = new Date(Date.now() + 15 * 60 * 1000);
+    
+    await user.save();
+    
+    // Send email with reset code
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: 'Password Reset Verification Code',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h2 style="color: #333;">Password Reset Request</h2>
+          <p>You requested to reset your password. Use the verification code below:</p>
+          <div style="background: #f5f5f5; padding: 20px; text-align: center; font-size: 32px; font-weight: bold; letter-spacing: 5px; margin: 20px 0;">
+            ${resetCode}
+          </div>
+          <p style="color: #666; font-size: 14px;">This code will expire in 15 minutes.</p>
+          <p style="color: #666; font-size: 14px;">If you didn't request this, please ignore this email.</p>
+        </div>
+      `
+    };
+    
+    transporter.sendMail(mailOptions);
+    
+    // Store email in session for the reset page
+    req.session.resetEmail = email;
+    
+    res.json({ success: true, message: 'Verification code sent to your email' });
+    
+  } catch (error) {
+    console.error('Forgot password error:', error);
+    res.json({ success: false, message: 'An error occurred. Please try again.' });
+  }
+});
+
+// Get reset password page
+router.get('/reset-password', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public', 'reset-password.html'));
+});
+
+// Verify code and reset password
+router.post('/reset-password', async (req, res) => {
+  try {
+    const { email, code, newPassword } = req.body;
+    
+    // Find user by email
+    const user = await User.findOne({ 
+      email: email.toLowerCase(),
+      resetPasswordToken: code,
+      resetPasswordExpires: { $gt: Date.now() }
+    });
+    
+    if (!user) {
+      return res.json({ success: false, message: 'Invalid or expired verification code' });
+    }
+    
+    // Hash new password
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(newPassword, saltRounds);
+    
+    // Update password and clear reset fields
+    user.password = hashedPassword;
+    user.resetPasswordToken = null;
+    user.resetPasswordExpires = null;
+    
+    await user.save();
+    
+    // Clear session
+    req.session.resetEmail = null;
+    
+    // Send confirmation email
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: 'Password Reset Successful',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h2 style="color: #333;">Password Reset Successful</h2>
+          <p>Your password has been successfully reset.</p>
+          <p>If you didn't make this change, please contact us immediately.</p>
+        </div>
+      `
+    };
+    
+    transporter.sendMail(mailOptions);
+    
+    res.json({ success: true, message: 'Password reset successful. You can now login with your new password.' });
+    
+  } catch (error) {
+    console.error('Reset password error:', error);
+    res.json({ success: false, message: 'An error occurred. Please try again.' });
   }
 });
 

@@ -68,6 +68,13 @@ exports.validateRegister = (req, res, next) => {
       field: detail.path[0],
       message: detail.message
     }));
+    
+    // Log validation errors to console
+    console.error('=== REGISTRATION VALIDATION ERROR ===');
+    console.error('Timestamp:', new Date().toISOString());
+    console.error('Errors:', JSON.stringify(errors, null, 2));
+    console.error('======================================');
+    
     return res.status(400).json({
       success: false,
       errors
@@ -86,6 +93,13 @@ exports.validateLogin = (req, res, next) => {
       field: detail.path[0],
       message: detail.message
     }));
+    
+    // Log validation errors to console
+    console.error('=== LOGIN VALIDATION ERROR ===');
+    console.error('Timestamp:', new Date().toISOString());
+    console.error('Errors:', JSON.stringify(errors, null, 2));
+    console.error('================================');
+    
     return res.status(400).json({
       success: false,
       errors

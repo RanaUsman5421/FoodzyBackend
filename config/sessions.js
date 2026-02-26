@@ -15,7 +15,7 @@ module.exports = session({
     cookie: {
       maxAge: 60 * 60 * 1000, // 1 hour
       httpOnly: true,
-      sameSite: 'strict', // More secure than 'lax'
+      sameSite: 'lax', // Changed from 'strict' for better cross-site compatibility
       secure: isProduction, // Only use secure cookies in production (requires HTTPS)
       partitioned: false,
     },

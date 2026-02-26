@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const orderSchema = new mongoose.Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true
+    },
     firstname: {
         type: String,
         required: [true, 'First name is required'],
@@ -82,5 +87,6 @@ const orderSchema = new mongoose.Schema({
 // Index for faster queries
 orderSchema.index({ createdAt: -1 });
 orderSchema.index({ 'items.product': 1 });
+orderSchema.index({ user: 1 });
 
 module.exports = mongoose.model("Order", orderSchema);

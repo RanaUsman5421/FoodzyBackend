@@ -58,10 +58,13 @@ const productSchema = new mongoose.Schema({
 
 // Auto-generate slug before saving
 productSchema.pre('save', function(next) {
-    if (this.isModified('product_name') && this.product_name) {
-        this.slug = slugify(this.product_name, { lower: true, strict: true });
+    try {
+        if (this.isModified('product_name') && this.product_name) {
+            this.slug = slugify(this.product_name, { lower: true, strict: true });
+        }
+    } catch (error) {
+        return error;
     }
-    next();
 });
 
 // Index for faster queries

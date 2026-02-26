@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/Navbar.css">
-    <link rel="stylesheet" href="./CSS/login.css">
-    <link rel="stylesheet" href="./CSS/responsive.css">
-    <link rel="stylesheet" href="./CSS/animations.css">
+    <link rel="stylesheet" href="/CSS/Navbar.css">
+    <link rel="stylesheet" href="/CSS/login.css">
+    <link rel="stylesheet" href="/CSS/responsive.css">
+    <link rel="stylesheet" href="/CSS/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css"
-        integrity="sha512-WxpJXPm/Is1a/dzEdhdaoajpgizHQimaLGL/QqUIAjIihlQqlPQb1V9vkGs9+VzXD7rgI6O+UsSKl4u5K36Ydw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Foodzy - Login</title>
 </head>
@@ -24,10 +22,10 @@
 
     <div class="login animate-scale-in">
         <div class="login-logo animate-fade-in-down">
-            <img src="./Assets/login_logo.png" alt="">
+            <img src="/Assets/login_logo.png" alt="">
         </div>
 
-        <form action="/login" method="post" class="login-form animate-fade-in-up">
+        <form id="loginForm" class="login-form animate-fade-in-up">
             <div class="login-form-div">
                 <p>Email Address</p>
                 <input type="email" placeholder="Enter your email" id="email" name="email" required>
@@ -43,7 +41,7 @@
                     <input type="checkbox">
                     <span>Remember Me</span>
                 </div>
-                <a href="">Forget Password?</a>
+                <a href="/forgot-password">Forget Password?</a>
             </div>
 
             <div class="submit-btn">
@@ -54,8 +52,8 @@
     </div>
 
     <footer></footer>
-    <script src="./JS/Navbar.js"></script>
-    <script src="./JS/login.js"></script>
-    <script src="./JS/animations.js"></script>
+    <script src="/JS/Navbar.js"></script>
+    <script src="/JS/login.js"></script>
+    <script src="/JS/animations.js"></script>
 </body>
 </html>

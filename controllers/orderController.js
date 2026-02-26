@@ -22,8 +22,9 @@ exports.placeOrder = async (req, res) => {
             });
         }
 
-        // Create new order
+        // Create new order with user reference
         const newOrder = new Order({
+            user: user._id,
             firstname,
             lastname,
             address,
@@ -56,7 +57,9 @@ exports.placeOrder = async (req, res) => {
 
 exports.getOrderById = async (req, res) => {
     try {
-        const order = await Order.findById(req.params.id).populate('items.product');
+        const order = await Order.findById(req.params.id)
+            .populate('user', 'firstname lastname email')
+            .populate('items.product');
         
         if (!order) {
             return res.status(404).json({
@@ -80,8 +83,10 @@ exports.getOrderById = async (req, res) => {
 
 exports.getUserOrders = async (req, res) => {
     try {
-        const orders = await Order.find({ 'items.product': { $in: req.session.userId } })
-            .sort({ createdAt: -1 });
+        // Find orders by user ID from session
+        const orders = await Order.find({ user: req.session.userId })
+            .sort({ createdAt: -1 })
+            .populate('items.product');
 
         res.json({
             success: true,
