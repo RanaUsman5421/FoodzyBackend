@@ -29,6 +29,8 @@ app.use(
     },
   })
 );
+
+app.set('trust proxy', 1);
 app.use(sessionMiddleware);
 app.set('etag', false);
 
