@@ -69,7 +69,6 @@ productSchema.pre('save', function(next) {
 
 // Index for faster queries
 productSchema.index({ category: 1 });
-productSchema.index({ slug: 1 });
 productSchema.index({ product_name: 'text' });
 
 module.exports = mongoose.model("Product", productSchema);
